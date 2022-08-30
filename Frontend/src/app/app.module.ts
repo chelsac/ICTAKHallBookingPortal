@@ -12,7 +12,7 @@ import { LoginComponent } from './login/login.component';
     UserListComponent,
     LoginComponent
 ],
-  imports: [
+imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule
