@@ -18,6 +18,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatToolbarModule} from '@angular/material/toolbar'; 
+import { FooterComponent } from './footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -28,8 +31,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     HeaderComponent,
     BookinglistComponent,
     HomeComponent,
+    FooterComponent,
   ],
-  imports: [
+ 
+imports: [ 
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -43,6 +48,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatCardModule,
     MatIconModule,
     MatCheckboxModule,
+    MatToolbarModule,
   ],
 
   providers: [],
