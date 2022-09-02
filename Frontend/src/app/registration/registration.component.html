@@ -1,9 +1,9 @@
 <!-- <h2>Register</h2> -->
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <div class="row">
+    <div class="form-row">
 
         <div class="col">
-            <div class="form-group inputalign row d-flex">
+            <div class="form-group inputalign form-row">
                 <div class="col">
                     <label for="firstName">First Name</label>
                     <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.firstName.errors }" />
@@ -20,10 +20,10 @@
                 </div>
             </div>
             <div class="form-group inputalign">
-                <label for="Email">Email</label>
-                <input type="text" formControlName="Email" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.username.errors }" />
-                <div *ngIf="submitted && registerForm.Email.errors" class="invalid-feedback">
-                    <div *ngIf="registerForm.Email.errors.required">Email is required</div>
+                <label for="email">Email</label>
+                <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.email.errors }" />
+                <div *ngIf="submitted && registerForm.email.errors" class="invalid-feedback">
+                    <div *ngIf="registerForm.email.errors.required">Email is required</div>
                 </div>
             </div>
             <div class="form-group inputalign">
@@ -35,10 +35,10 @@
                 </div>
             </div>
             <div class="form-group inputalign">
-                <label for="Email">Job Description</label>
-                <input type="text" formControlName="job Description" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.username.errors }" />
-                <div *ngIf="submitted && registerForm.Email.errors" class="invalid-feedback">
-                    <div *ngIf="registerForm.Email.errors.required">Email is required</div>
+                <label for="jobTitle">Job Title</label>
+                <input type="text" formControlName="jobTitle" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.jobTitle.errors }" />
+                <div *ngIf="submitted && registerForm.jobTitle.errors" class="invalid-feedback">
+                    <div *ngIf="registerForm.jobTitle.errors.required">Job Title is required</div>
                 </div>
             </div>
             <div class="form-group inputalign buttonalign">

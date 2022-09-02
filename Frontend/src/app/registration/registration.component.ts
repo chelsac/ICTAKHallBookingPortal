@@ -18,8 +18,9 @@ export class RegistrationComponent implements OnInit {
     this.registerForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      Email: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      email: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      jobTitle: ['', Validators.required]
   });
   }
 
