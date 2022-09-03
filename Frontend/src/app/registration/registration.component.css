@@ -16,9 +16,24 @@ form {
 }
 
 .align-img{
-  padding: 175px 4px 20px 4px;;
+  padding: 150px 4px 40px 14px;
 }
 
 .btn{
   background-color: #004d40 !important;
+}
+
+.login_link{
+  display: flex;
+  justify-content: center;
+}
+
+.heading-align{
+  margin: 0px 0px 40px 0px;
+}
+
+.heading{
+  font-size: x-large;
+  font-family: fantasy;
+  color: #004d40;
 }

@@ -25,15 +25,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitted = true;
-
-    // stop here if form is invalid
-    if (this.registerForm.invalid) {
-        return;
-    }
-
-
-    //https://stackblitz.com/edit/angular-8-registration-login-example?file=app%2Fregister%2Fregister.component.ts
+    
   }
 
 }
