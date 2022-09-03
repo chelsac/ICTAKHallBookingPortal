@@ -9,10 +9,11 @@ import { BookinglistComponent } from './bookinglist/bookinglist.component';
 
 const routes: Routes = [
   { path: 'home' , component: HomeComponent},
-  { path: 'userList', component: UserListComponent },
+  { path: 'user-list', component: UserListComponent },
   { path: "login", component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
-  { path:'bookinglist',component:BookinglistComponent}
+  { path:'bookinglist',component:BookinglistComponent},
+ 
    
 ];
 
