@@ -8,6 +8,7 @@ import { BookinglistComponent } from './bookinglist/bookinglist.component';
 
 
 const routes: Routes = [
+  { path: '',     component: LoginComponent },
   { path: 'home' , component: HomeComponent},
   { path: 'user-list', component: UserListComponent },
   { path: "login", component: LoginComponent },
