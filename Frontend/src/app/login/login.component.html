@@ -1,24 +1,26 @@
-<h2>Login</h2> 
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && loginForm.username.errors }" />
-        <div *ngIf="submitted && loginForm.username.errors" class="invalid-feedback">
-            <div *ngIf="loginForm.username.errors.required">Username is required</div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && loginForm.password.errors }" />
-        <div *ngIf="submitted && loginForm.password.errors" class="invalid-feedback">
-            <div *ngIf="loginForm.password.errors.required">Password is required</div>
-        </div>
-    </div>
-    <div class="form-group">
-        <button [disabled]="loading" class="btn btn-primary">
-            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-            Login
-        </button>
-        <a routerLink="/register" class="btn btn-link">Register</a>
-    </div>
-</form> -->
+<div>
+  <body>
+      <div class="center">
+          <h1>Hall Booking Portal</h1>
+          <form method="post">
+              <div class="txt_field">
+                  <input type="text" required>
+                  <span></span>
+                  <label>Username</label>
+              </div>
+  
+              <div class="txt_field">
+                  <input type="password" required>
+                  <span></span>
+                  <label>Password</label>
+              </div>
+                  <div class="pass">Forgot Password?</div>
+                  <input type="submit" value="Login">
+                  <div class="signup_link">
+                      Not a member? <a href="registration">SignUp</a>
+                  </div>
+           </form>     
+  
+      </div>
+  </body>
+  </div>

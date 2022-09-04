@@ -18,21 +18,14 @@ export class RegistrationComponent implements OnInit {
     this.registerForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      username: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      email: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      jobTitle: ['', Validators.required]
   });
   }
 
   onSubmit() {
-    this.submitted = true;
-
-    // stop here if form is invalid
-    if (this.registerForm.invalid) {
-        return;
-    }
-
-
-    //https://stackblitz.com/edit/angular-8-registration-login-example?file=app%2Fregister%2Fregister.component.ts
+    
   }
 
 }
