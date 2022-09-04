@@ -12,5 +12,6 @@ a{
     text-decoration: none;
 }
 img{
-    margin: 5px;
+    /* margin: 5px; */
+    height:60px;
 }
