@@ -19,9 +19,15 @@
       display: block;
     }
   }
+
+  .card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all .5s ease-in-out;
+  }
   
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  .card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.705), 0 6px 20px 0 rgba(0, 0, 0, 0.671); 
+    transform: scale(1.05);
   }
   
   .container {
@@ -58,4 +64,51 @@ a {
     padding-left: 30px;
     padding-right: 30px;
 
+}
+
+.mybutton{
+    background-color: black;
+    float: right;
+    padding: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+span{
+    margin: 2px;
+}
+
+
+.buttonnew {
+  float: right;
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember",sans-serif;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 100px;
+}
+
+.buttonnew:hover {
+  background-color: #ffffff;
+  transform: scale(1.1);
+}
+
+.buttonnew:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  outline: 0;
 }
