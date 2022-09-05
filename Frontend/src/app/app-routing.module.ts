@@ -5,16 +5,19 @@ import { LoginComponent } from './login/login.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { HomeComponent } from './home/home.component';
 import { ConferenceRoomListComponent } from './conference-room-list/conference-room-list.component';
+import { BookinglistComponent } from './bookinglist/bookinglist.component';
 
 
 const routes: Routes = [
-  { path: '',     component: LoginComponent },
-  { path: 'home' , component: HomeComponent},
+  { path: '', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'user-list', component: UserListComponent },
-  { path: "login", component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'conferenceRooms', component:ConferenceRoomListComponent },
-]
+  { path: 'bookinglist', component: BookinglistComponent }
+];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
