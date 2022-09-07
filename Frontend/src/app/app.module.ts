@@ -20,8 +20,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FooterComponent } from './footer/footer.component';
+import { HalllistUserComponent } from './halllist-user/halllist-user.component';
 import { ConferenceRoomListComponent } from './conference-room-list/conference-room-list.component';
 import { UsersComponent } from './users/users.component';
+
 
 
 @NgModule({
@@ -34,9 +36,10 @@ import { UsersComponent } from './users/users.component';
     BookinglistComponent,
     HomeComponent,
     FooterComponent,
-    ConferenceRoomListComponent,
-    UsersComponent 
-  ],
+    UsersComponent,
+    HalllistUserComponent,
+    ConferenceRoomListComponent 
+],
  
 imports: [ 
     BrowserModule,
@@ -52,7 +55,8 @@ imports: [
     MatCardModule,
     MatIconModule,
     MatCheckboxModule,
-    MatToolbarModule,    
+    MatToolbarModule,
+      
   ],
 
   providers: [],

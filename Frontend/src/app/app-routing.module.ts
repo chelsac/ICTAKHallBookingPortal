@@ -1,12 +1,14 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { HomeComponent } from './home/home.component';
+import { HalllistUserComponent } from './halllist-user/halllist-user.component';
 import { ConferenceRoomListComponent } from './conference-room-list/conference-room-list.component';
 import { BookinglistComponent } from './bookinglist/bookinglist.component';
 import { UsersComponent } from './users/users.component';
+
 
 
 const routes: Routes = [
@@ -15,6 +17,7 @@ const routes: Routes = [
   { path: 'user-list', component: UserListComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
+  {path:'halllist-user', component:HalllistUserComponent},
   { path: 'conferenceRooms', component:ConferenceRoomListComponent },
   { path: 'bookinglist', component: BookinglistComponent },
   { path: 'users',component:UsersComponent,
@@ -24,6 +27,7 @@ const routes: Routes = [
     { path: 'registration', component: RegistrationComponent }
   ]}
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
