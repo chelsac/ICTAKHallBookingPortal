@@ -6,6 +6,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { HomeComponent } from './home/home.component';
 import { ConferenceRoomListComponent } from './conference-room-list/conference-room-list.component';
 import { BookinglistComponent } from './bookinglist/bookinglist.component';
+import { UsersComponent } from './users/users.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,13 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'conferenceRooms', component:ConferenceRoomListComponent },
-  { path: 'bookinglist', component: BookinglistComponent }
+  { path: 'bookinglist', component: BookinglistComponent },
+  { path: 'users',component:UsersComponent,
+  children:[
+    { path: '', component: UserListComponent },
+    { path: 'user-list', component: UserListComponent },
+    { path: 'registration', component: RegistrationComponent }
+  ]}
 ];
 
 @NgModule({

@@ -21,6 +21,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FooterComponent } from './footer/footer.component';
 import { ConferenceRoomListComponent } from './conference-room-list/conference-room-list.component';
+import { UsersComponent } from './users/users.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { ConferenceRoomListComponent } from './conference-room-list/conference-r
     BookinglistComponent,
     HomeComponent,
     FooterComponent,
-    ConferenceRoomListComponent 
+    ConferenceRoomListComponent,
+    UsersComponent 
   ],
  
 imports: [ 
