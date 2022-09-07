@@ -21,7 +21,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FooterComponent } from './footer/footer.component';
 import { HalllistUserComponent } from './halllist-user/halllist-user.component';
-
+import { ConferenceRoomListComponent } from './conference-room-list/conference-room-list.component';
 
 
 
@@ -35,7 +35,8 @@ import { HalllistUserComponent } from './halllist-user/halllist-user.component';
     BookinglistComponent,
     HomeComponent,
     FooterComponent,
-    HalllistUserComponent 
+    HalllistUserComponent,
+    ConferenceRoomListComponent 
   ],
  
 imports: [ 
