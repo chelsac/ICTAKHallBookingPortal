@@ -20,6 +20,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FooterComponent } from './footer/footer.component';
+import { HalllistUserComponent } from './halllist-user/halllist-user.component';
+
+
 
 
 @NgModule({
@@ -31,7 +34,8 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     BookinglistComponent,
     HomeComponent,
-    FooterComponent 
+    FooterComponent,
+    HalllistUserComponent 
   ],
  
 imports: [ 
@@ -48,7 +52,8 @@ imports: [
     MatCardModule,
     MatIconModule,
     MatCheckboxModule,
-    MatToolbarModule,    
+    MatToolbarModule,
+      
   ],
 
   providers: [],
