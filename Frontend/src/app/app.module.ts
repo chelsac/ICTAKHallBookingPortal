@@ -22,6 +22,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { FooterComponent } from './footer/footer.component';
 import { HalllistUserComponent } from './halllist-user/halllist-user.component';
 import { ConferenceRoomListComponent } from './conference-room-list/conference-room-list.component';
+import { UsersComponent } from './users/users.component';
 
 
 
@@ -35,9 +36,10 @@ import { ConferenceRoomListComponent } from './conference-room-list/conference-r
     BookinglistComponent,
     HomeComponent,
     FooterComponent,
+    UsersComponent,
     HalllistUserComponent,
     ConferenceRoomListComponent 
-  ],
+],
  
 imports: [ 
     BrowserModule,
