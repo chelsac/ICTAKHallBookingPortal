@@ -8,6 +8,7 @@ import { HalllistUserComponent } from './halllist-user/halllist-user.component';
 import { ConferenceRoomListComponent } from './conference-room-list/conference-room-list.component';
 import { BookinglistComponent } from './bookinglist/bookinglist.component';
 import { UsersComponent } from './users/users.component';
+import { UserViewComponent } from './user-view/user-view.component';
 
 
 
@@ -24,7 +25,8 @@ const routes: Routes = [
   children:[
     { path: '', component: UserListComponent },
     { path: 'user-list', component: UserListComponent },
-    { path: 'registration', component: RegistrationComponent }
+    { path: 'registration', component: RegistrationComponent },
+    {path:'user-view',component:UserViewComponent}
   ]}
 ];
 
