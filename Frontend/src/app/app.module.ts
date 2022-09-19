@@ -23,7 +23,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HalllistUserComponent } from './halllist-user/halllist-user.component';
 import { ConferenceRoomListComponent } from './conference-room-list/conference-room-list.component';
 import { UsersComponent } from './users/users.component';
-import { UserViewComponent } from './user-view/user-view.component';
+import { AdminApprovalComponent } from './admin-approval/admin-approval.component';
+import { AddHallComponent } from './add-hall/add-hall.component';
 
 
 
@@ -40,7 +41,8 @@ import { UserViewComponent } from './user-view/user-view.component';
     UsersComponent,
     HalllistUserComponent,
     ConferenceRoomListComponent,
-    UserViewComponent 
+    AdminApprovalComponent,
+    AddHallComponent 
 ],
  
 imports: [ 
