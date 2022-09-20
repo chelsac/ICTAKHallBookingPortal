@@ -1,26 +1,32 @@
-<div>
-  <body>
-      <div class="center">
-          <h1>Hall Booking Portal</h1>
-          <form method="post">
-              <div class="txt_field">
-                  <input type="text" required>
-                  <span></span>
-                  <label>Username</label>
-              </div>
-  
-              <div class="txt_field">
-                  <input type="password" required>
-                  <span></span>
-                  <label>Password</label>
-              </div>
-                  <div class="pass">Forgot Password?</div>
-                  <input type="submit" value="Login">
-                  <div class="signup_link">
-                      Not a member? <a href="registration">SignUp</a>
-                  </div>
-           </form>     
-  
-      </div>
-  </body>
-  </div>
+
+<div class="center"></div>
+<img src="../../assets/images/undraw_profile_pic_ic-5-t (2).svg" alt="">
+<!-- <img class="login_img" src="../../assets/images/undraw_remotely_-2-j6y.svg" alt=""> -->
+<h1>{{title}}</h1>
+<form class="login_fields">
+<form #loginForm = "ngForm" (ngSubmit) = "loginUser(loginForm.value)"> 
+    <div class="txt_field">
+    <input type="email" required #name="ngModel" email name="name" placeholder="Email" ngModel>
+    <br/>
+        <span *ngIf= "name.invalid && name.touched" style="color: red;">Please enter in email format</span> 
+    <br/>
+</div>
+
+    <div class="txt_field">
+    <input type="password" name="password" minlength="6" required #password= "ngModel" placeholder="Password" ngModel>
+    <br/>
+        <span *ngIf= "password.invalid && password.touched" style="color: red;">Please enter minimum 6 characters</span> 
+     <br/>
+    </div>
+    
+
+    <div class="pass">Forgot Password?</div>
+    <br>
+    <button [disabled]="loginForm.invalid"><a class="anchor" href="#">Login</a> </button>
+    
+    <div class="signup_link">
+        Not a member? <a href="#">SignUp</a>
+    </div>
+    <!-- <img src="../../assets/images/undraw_hello_re_3evm.svg" class="hello-img"alt=""> -->
+</form>
+</form>

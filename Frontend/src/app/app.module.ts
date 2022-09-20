@@ -20,12 +20,22 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FooterComponent } from './footer/footer.component';
+import { HalllistUserComponent } from './halllist-user/halllist-user.component';
 import { ConferenceRoomListComponent } from './conference-room-list/conference-room-list.component';
+
 import { BookinglistingComponent } from './bookinglisting/bookinglisting.component';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import { UsersComponent } from './users/users.component';
+import { AdminApprovalComponent } from './admin-approval/admin-approval.component';
+import { AddHallComponent } from './add-hall/add-hall.component';
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,11 +46,22 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BookinglistComponent,
     HomeComponent,
     FooterComponent,
+
     ConferenceRoomListComponent,
     BookinglistingComponent,
   ],
 
   imports: [
+
+    UsersComponent,
+    HalllistUserComponent,
+    ConferenceRoomListComponent,
+    AdminApprovalComponent,
+    AddHallComponent 
+],
+ 
+imports: [ 
+
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -59,6 +80,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatTableModule,
     MatPaginatorModule,
     FontAwesomeModule,
+
+      
+
   ],
 
   providers: [],
