@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { HomeComponent } from './home/home.component';
 import { BookinglistComponent } from './bookinglist/bookinglist.component';
+import { BookinglistingComponent } from './bookinglisting/bookinglisting.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'user-list', component: UserListComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
-  { path: 'bookinglist', component: BookinglistComponent },
+  { path: 'booking', component: BookinglistComponent },
+  { path: 'bookinglist',component:BookinglistingComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

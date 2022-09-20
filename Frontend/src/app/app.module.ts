@@ -21,8 +21,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FooterComponent } from './footer/footer.component';
 import { ConferenceRoomListComponent } from './conference-room-list/conference-room-list.component';
-
-
+import { BookinglistingComponent } from './bookinglisting/bookinglisting.component';
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,10 +36,11 @@ import { ConferenceRoomListComponent } from './conference-room-list/conference-r
     BookinglistComponent,
     HomeComponent,
     FooterComponent,
-    ConferenceRoomListComponent 
+    ConferenceRoomListComponent,
+    BookinglistingComponent,
   ],
- 
-imports: [ 
+
+  imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -50,7 +54,11 @@ imports: [
     MatCardModule,
     MatIconModule,
     MatCheckboxModule,
-    MatToolbarModule,    
+    MatToolbarModule,
+    MatListModule,
+    MatTableModule,
+    MatPaginatorModule,
+    FontAwesomeModule,
   ],
 
   providers: [],
