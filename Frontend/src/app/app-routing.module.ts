@@ -7,8 +7,13 @@ import { HomeComponent } from './home/home.component';
 import { HalllistUserComponent } from './halllist-user/halllist-user.component';
 import { ConferenceRoomListComponent } from './conference-room-list/conference-room-list.component';
 import { BookinglistComponent } from './bookinglist/bookinglist.component';
+import { BookinglistingComponent } from './bookinglisting/bookinglisting.component';
 import { UsersComponent } from './users/users.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { AdminApprovalComponent } from './admin-approval/admin-approval.component';
+import { AddHallComponent } from './add-hall/add-hall.component';
+
+
 
 
 
@@ -18,18 +23,29 @@ const routes: Routes = [
   { path: 'user-list', component: UserListComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
-  {path:'halllist-user', component:HalllistUserComponent},
+
+  { path: 'booking', component: BookinglistComponent },
+  { path: 'bookinglist',component:BookinglistingComponent},
+
+  { path:'halllist-user', component:HalllistUserComponent},
   { path: 'conferenceRooms', component:ConferenceRoomListComponent },
   { path: 'bookinglist', component: BookinglistComponent },
+  { path: 'admin-approval', component: AdminApprovalComponent},
+  { path: 'add-hall', component:AddHallComponent},
   { path: 'users',component:UsersComponent,
   children:[
     { path: '', component: UserListComponent },
     { path: 'user-list', component: UserListComponent},    
     { path: 'registration', component: RegistrationComponent }
   ]},
-  {path: 'user-edit', component: UserEditComponent}
-  
-];
+  {path: 'user-edit', component: UserEditComponent},
+  { path: 'user-list', component: UserListComponent },
+    // { path: 'registration', component: RegistrationComponent }
+  ]
+
+
+
+
 
 
 @NgModule({

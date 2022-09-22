@@ -22,8 +22,20 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { FooterComponent } from './footer/footer.component';
 import { HalllistUserComponent } from './halllist-user/halllist-user.component';
 import { ConferenceRoomListComponent } from './conference-room-list/conference-room-list.component';
+
+import { BookinglistingComponent } from './bookinglisting/bookinglisting.component';
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { UsersComponent } from './users/users.component';
+
 import { UserEditComponent } from './user-edit/user-edit.component';
+
+import { AdminApprovalComponent } from './admin-approval/admin-approval.component';
+import { AddHallComponent } from './add-hall/add-hall.component';
+
 
 
 
@@ -37,13 +49,13 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     BookinglistComponent,
     HomeComponent,
     FooterComponent,
-    UsersComponent,
-    HalllistUserComponent,
+
     ConferenceRoomListComponent,
-    UserEditComponent 
-],
+    BookinglistingComponent,
+  ],
  
 imports: [ 
+
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -58,7 +70,17 @@ imports: [
     MatIconModule,
     MatCheckboxModule,
     MatToolbarModule,
-      
+    MatListModule,
+    MatTableModule,
+    MatPaginatorModule,
+    FontAwesomeModule,
+    UsersComponent,
+    HalllistUserComponent,
+    ConferenceRoomListComponent,
+     UserEditComponent ,
+     AdminApprovalComponent,
+    AddHallComponent 
+
   ],
 
   providers: [],
