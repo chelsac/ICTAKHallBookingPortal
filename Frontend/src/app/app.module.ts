@@ -23,6 +23,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HalllistUserComponent } from './halllist-user/halllist-user.component';
 import { ConferenceRoomListComponent } from './conference-room-list/conference-room-list.component';
 import { UsersComponent } from './users/users.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 
 
@@ -38,7 +39,8 @@ import { UsersComponent } from './users/users.component';
     FooterComponent,
     UsersComponent,
     HalllistUserComponent,
-    ConferenceRoomListComponent 
+    ConferenceRoomListComponent,
+    UserEditComponent 
 ],
  
 imports: [ 
