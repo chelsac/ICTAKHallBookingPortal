@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from '../services/users/user.service';
 
 @Component({
   selector: 'app-registration',
@@ -12,7 +14,11 @@ export class RegistrationComponent implements OnInit {
   loading = false;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private userService: UserService
+    ) { }
 
   ngOnInit(){
     this.registerForm = this.formBuilder.group({
@@ -24,8 +30,19 @@ export class RegistrationComponent implements OnInit {
   });
   }
 
-  onSubmit() {
-    
-  }
+  register() {
 
+    if (this.registerForm.invalid) {
+      return;
+    }
+
+    this.userService.addUser(this.registerForm.value).subscribe({
+      next: (result: any) => {
+        this.router.navigate(['/login']);
+      },
+      error: (err: any) => {
+        console.log(err);
+      }
+    });
+  }
 }
