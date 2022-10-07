@@ -1,16 +1,16 @@
 img{
     height: 130px;
     margin-left: 41%;
-    margin-top: 10px;
-    
+    margin-top: 25px;
 }
 
 h1{
     margin-left: 37%;
     font-family: fantasy;
-    font-size:xx-large;
-    font-style: italic;
+    font-size: xx-large;
+    /* font-style: italic; */
     color: #004d40;
+    margin-top: 25px;
     
     
 }
@@ -66,6 +66,7 @@ button{
 
 .signup_link{
     margin-right: 30%;
+    margin-top: 10px;
     margin-left: 40px;
     font-size: 16px;
     color: #004d40;

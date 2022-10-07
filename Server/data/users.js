@@ -67,7 +67,7 @@ userRoute.route('/checkUser').post(async function (req, res) {
     })
   }
 
-  if (req.body.password == user.password) {
+  if (req.body.password == user._doc.password) {
     return res.status(200).json({ 'user': 'User exists!!' });
   }
   else {
