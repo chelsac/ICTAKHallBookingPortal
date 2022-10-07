@@ -35,6 +35,7 @@ import { UserEditComponent } from './user-edit/user-edit.component';
 import { AdminApprovalComponent } from './admin-approval/admin-approval.component';
 import { AddHallComponent } from './add-hall/add-hall.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HallUpdateComponent } from './hall-update/hall-update.component';
 
 
 
@@ -55,7 +56,8 @@ import { HttpClientModule } from '@angular/common/http';
     HalllistUserComponent,
     UserEditComponent ,
     AdminApprovalComponent,
-    AddHallComponent 
+    AddHallComponent,
+    HallUpdateComponent 
   ],
  
 imports: [ 

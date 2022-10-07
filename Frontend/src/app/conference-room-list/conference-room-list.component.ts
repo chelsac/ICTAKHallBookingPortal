@@ -16,6 +16,20 @@ export class ConferenceRoomListComponent implements OnInit {
     description:''
   }];
 
+  delete(data:any){
+    this.hallsservice.deleteHall(data._id).subscribe((datas)=>{
+      console.log(datas);
+    })
+    alert("Hall Deleted");
+    location.pathname = ('/conferenceRooms');
+  }
+
+  editHall(hall:any){
+    localStorage.setItem("editHallId", hall._id.toString());
+    location.pathname = ('/hallupdate');
+}
+
+
   constructor(private hallsservice:HallsService,private router: Router) { }
 
   ngOnInit(): void {

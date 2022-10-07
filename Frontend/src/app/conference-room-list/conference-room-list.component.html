@@ -9,14 +9,14 @@
           <p class="card-text"><b>Location</b>: {{i.location}}</p>
           <p class="card-text"><b>Description</b>: {{i.description}}</p>
           <div class="new">
-            <a href="#" class="btn a-btn-slide-text buttonnew">
-                <span><i class="fa fa-edit"></i></span>
+            <button class="btn a-btn-slide-text buttonnew" (click)="editHall(i)">
+              <span><i class="fa fa-edit"></i></span>
                 <span>Edit</span>            
-            </a>
-            <a href="#" class="btn a-btn-slide-text buttonnew">
+            </button>
+            <button class="btn a-btn-slide-text buttonnew"  (click)="delete(i)">
                <span><i class="fa fa-trash"></i></span>
                 <span>Delete</span>            
-            </a>
+            </button>
           </div>
         </div>
       </div>

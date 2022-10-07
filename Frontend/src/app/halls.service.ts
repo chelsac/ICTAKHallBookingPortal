@@ -14,5 +14,21 @@ export class HallsService {
     return this.http.get('http://localhost:4000/halls');
   }
 
+  deleteHall(id:any){
+    console.log(id);
+    return this.http.delete('http://localhost:4000/delete/'+id);
+  }
+
+  geteditHall(_id:any){
+
+    return this.http.get('http://localhost:4000/'+_id);
+  }
+
+  updateHall(hall:any){
+    console.log(hall);
+    return this.http.put('http://localhost:4000/edit', {hall})
+    .subscribe(data=> {console.log(data)})
+  }
+
   constructor(private http:HttpClient) { }
 }

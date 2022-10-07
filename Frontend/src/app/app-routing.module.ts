@@ -12,6 +12,7 @@ import { UsersComponent } from './users/users.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { AdminApprovalComponent } from './admin-approval/admin-approval.component';
 import { AddHallComponent } from './add-hall/add-hall.component';
+import { HallUpdateComponent } from './hall-update/hall-update.component';
 
 
 
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'bookinglist',component:BookinglistingComponent},
 
   { path:'halllist-user', component:HalllistUserComponent},
+  { path:'hallupdate' ,component:HallUpdateComponent},
   { path: 'conferenceRooms', component:ConferenceRoomListComponent },
   { path: 'bookinglist', component: BookinglistComponent },
   { path: 'admin-approval', component: AdminApprovalComponent},

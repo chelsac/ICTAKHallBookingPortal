@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const userRoute = require('./data/users.js');
-const halls=require('./model/halls')
+const halls=require('./model/halls');
+const hallData = require('./model/halls');
 
 // MongoDB Databse url
 var mongoDatabase = 'mongodb+srv://test:test@cluster0.ejygs4h.mongodb.net/ICTAKHallBookingPortal?retryWrites=true&w=majority';
@@ -58,6 +59,55 @@ app.get('/halls', function(req,res){
       res.send(halls);
     })
   })
+
+  //delete hall
+  app.delete('/delete/:id',function(req,res){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
+    console.log(req.params.id);
+    halls.findByIdAndDelete(req.params.id).then(()=>{
+      console.log('success')
+      res.send();
+  })
+     
+    })
+
+    //hall update
+
+    app.get('/:id', function(req,res){
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
+  
+  
+      const id=req.params.id;
+      hallData.findOne({"_id":id}).then((_hall)=>{
+        res.send(_hall);
+      })
+    
+    })
+
+        app.put('/edit',function(req,res){
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
+        console.log("inside update");
+        id=req.body.hall._id;
+        name=req.body.hall.name;
+        capacity=req.body.hall.capacity;
+        location=req.body.hall.location;
+        image=req.body.hall.image;
+        description=req.body.hall.description;
+        hallData.findByIdAndUpdate({"_id":id},
+                                    {$set:{"name":name,
+                                            "capacity":capacity,
+                                            "location":location,
+                                            "image":image,
+                                            "description":description
+                                           }})
+          .then(function(){
+            res.send();
+          })
+    
+    });
 
 // Staring our express server
 const server = app.listen(port, function () {
