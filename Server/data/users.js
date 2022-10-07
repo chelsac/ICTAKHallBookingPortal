@@ -52,6 +52,32 @@ userRoute.route('/updateUser/:id').post(function (req, res) {
 });
 
 
+//check if user exit
+userRoute.route('/checkUser').post(async function (req, res) {
+  
+  let user = await userModel.findOne({
+    email: req.body.email
+  });
+
+  //check if user exit
+  if (!user) {
+    return res.status(400).json({
+        type: "Not Found",
+        msg: "User dosen't exists!!"
+    })
+  }
+
+  if (req.body.password == user.password) {
+    return res.status(200).json({ 'user': 'User exists!!' });
+  }
+  else {
+      return res.status(400).json({
+          type: "Not Found",
+          msg: "Wrong Login Credentials!!"
+      })
+  }
+});
+
 
 
 //To edit User

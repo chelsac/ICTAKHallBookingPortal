@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HallsService } from '../halls.service';
+import { HallsService } from '../services/halls/halls.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './add-hall.component.html',
   styleUrls: ['./add-hall.component.css']
 })
+
 export class AddHallComponent implements OnInit {
   hall={
     name:'',

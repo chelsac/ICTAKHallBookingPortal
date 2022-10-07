@@ -3,7 +3,7 @@ const hallRoute = express.Router();
 const halls = require('../model/halls');
 
 //adding hall data
-hallRoute.route('/addhall').post(function (req, res) {
+hallRoute.route('/addHall').post(function (req, res) {
     var item = {
         name: req.body.name,
         capacity: req.body.capacity,
@@ -12,7 +12,7 @@ hallRoute.route('/addhall').post(function (req, res) {
         description: req.body.description
     };
 
-    var data = halls(item);
+    let data = new halls(item);
     data.save();
     halls.find().then(function (data) {
         res.send(data);
@@ -21,7 +21,7 @@ hallRoute.route('/addhall').post(function (req, res) {
 
 
 //view halls
-hallRoute.route('/viewhall').get(function (req, res) {
+hallRoute.route('/viewHall').get(function (req, res) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
 
@@ -37,7 +37,7 @@ hallRoute.route('/:id').get(function (req, res) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
     const id = req.params.id;
-    hallData.findOne({ "_id": id }).then((_hall) => {
+    halls.findOne({ "_id": id }).then((_hall) => {
         res.send(_hall);
     })
 
@@ -55,7 +55,7 @@ hallRoute.route('/editHall/:id').put(function (req, res) {
     location = req.body.hall.location;
     image = req.body.hall.image;
     description = req.body.hall.description;
-    hallData.findByIdAndUpdate({ "_id": id },
+    halls.findByIdAndUpdate({ "_id": id },
         {
             $set: {
                 "name": name,

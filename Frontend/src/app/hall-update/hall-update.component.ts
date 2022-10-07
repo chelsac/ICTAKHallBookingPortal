@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HallsService } from '../halls.service';
+import { HallsService } from '../services/halls/halls.service';
 
 @Component({
   selector: 'app-hall-update',
