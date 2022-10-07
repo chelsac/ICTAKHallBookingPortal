@@ -4,15 +4,16 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const userRoute = require('./data/users.js');
-const halls=require('./model/halls');
-const hallData = require('./model/halls');
+const hallRoute = require('./data/hall.js');
 
 // MongoDB Databse url
 var mongoDatabase = 'mongodb+srv://test:test@cluster0.ejygs4h.mongodb.net/ICTAKHallBookingPortal?retryWrites=true&w=majority';
 
+
 // Created express server
 const app = express();
 mongoose.Promise = global.Promise;
+
 
 // Connect Mongodb Database
 mongoose.connect(mongoDatabase, { useNewUrlParser: true }).then(
@@ -20,94 +21,25 @@ mongoose.connect(mongoDatabase, { useNewUrlParser: true }).then(
  err => { console.log('There is problem while connecting database ' + err) }
 );
 
+
 // Convert incoming data to JSON format
 app.use(bodyParser.json());
+
 
 // Enabled CORS
 app.use(cors());
 
+
 // Setup for the server port number
 const port = process.env.PORT || 4000;
 
+
 // Routes Configuration
 app.use('/api/users', userRoute);
+app.use('/api/hall', hallRoute);
 
-//adding hall data
-app.post('/addhall',function(req,res){
-    var item={
-        name:req.body.name,
-        capacity:req.body.capacity,
-        location:req.body.location,
-        image:req.body.image,
-        description:req.body.description
-    };
 
-    var data=halls(item);
-    data.save();
-    halls.find().then(function(data){
-        res.send(data);
-    })
-})
 
-//view halls
-app.get('/halls', function(req,res){
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
-
-    halls.find()
-    .then(function(halls){
-      res.send(halls);
-    })
-  })
-
-  //delete hall
-  app.delete('/delete/:id',function(req,res){
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
-    console.log(req.params.id);
-    halls.findByIdAndDelete(req.params.id).then(()=>{
-      console.log('success')
-      res.send();
-  })
-     
-    })
-
-    //hall update
-
-    app.get('/:id', function(req,res){
-      res.header("Access-Control-Allow-Origin", "*");
-      res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
-  
-  
-      const id=req.params.id;
-      hallData.findOne({"_id":id}).then((_hall)=>{
-        res.send(_hall);
-      })
-    
-    })
-
-        app.put('/edit',function(req,res){
-        res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
-        console.log("inside update");
-        id=req.body.hall._id;
-        name=req.body.hall.name;
-        capacity=req.body.hall.capacity;
-        location=req.body.hall.location;
-        image=req.body.hall.image;
-        description=req.body.hall.description;
-        hallData.findByIdAndUpdate({"_id":id},
-                                    {$set:{"name":name,
-                                            "capacity":capacity,
-                                            "location":location,
-                                            "image":image,
-                                            "description":description
-                                           }})
-          .then(function(){
-            res.send();
-          })
-    
-    });
 
 // Staring our express server
 const server = app.listen(port, function () {

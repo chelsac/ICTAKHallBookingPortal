@@ -1,5 +1,4 @@
 const express = require('express');
-const app = express();
 const userRoute = express.Router();
 const userModel = require('../Model/Users');
 
@@ -22,7 +21,7 @@ userRoute.route('/addUser').post(function (req, res) {
     let user = new userModel(req.body);
     user.save()
         .then(data => {
-            res.status(200).json({ 'user': 'User Added Successfully' });
+            res.status(200).json({ 'user': 'User Has Been Added Successfully' });
         })
         .catch(err => {
             res.status(400).send("Something Went Wrong");
@@ -69,16 +68,16 @@ if (!req.body) {
     .then(data => {
       if (!data) {
         res.status(404).send({
-          message: `Cannot update Tutorial with id=${id}. Maybe Tutorial was not found!`
+          message: `Cannot update user with id=${id}. Maybe User was not found!`
         });
       } 
       else {
-        res.send({ message: "Tutorial was updated successfully." });
+        res.send({ message: "User Has Been Updated Successfully." });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Error updating Tutorial with id=" + id
+        message: "Error updating user with id=" + id
       });
     });
 });
