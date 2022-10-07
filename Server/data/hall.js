@@ -1,6 +1,6 @@
 const express = require('express');
 const hallRoute = express.Router();
-const halls = require('./model/halls');
+const halls = require('../model/halls');
 
 //adding hall data
 hallRoute.route('/addhall').post(function (req, res) {
@@ -83,3 +83,6 @@ hallRoute.route('/deleteHall/:id').delete(function (req, res) {
     })
 
 })
+
+
+module.exports = hallRoute;
