@@ -30,11 +30,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { FontAwesomeModule } from '@fontawesome/angular-fontawesome';
 
 import { UsersComponent } from './users/users.component';
-
 import { UserEditComponent } from './user-edit/user-edit.component';
 
 import { AdminApprovalComponent } from './admin-approval/admin-approval.component';
 import { AddHallComponent } from './add-hall/add-hall.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HallUpdateComponent } from './hall-update/hall-update.component';
 
 
 
@@ -49,15 +50,21 @@ import { AddHallComponent } from './add-hall/add-hall.component';
     BookinglistComponent,
     HomeComponent,
     FooterComponent,
-
     ConferenceRoomListComponent,
     BookinglistingComponent,
+    UsersComponent,
+    HalllistUserComponent,
+    UserEditComponent ,
+    AdminApprovalComponent,
+    AddHallComponent,
+    HallUpdateComponent 
   ],
  
 imports: [ 
 
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
@@ -73,14 +80,7 @@ imports: [
     MatListModule,
     MatTableModule,
     MatPaginatorModule,
-    FontAwesomeModule,
-    UsersComponent,
-    HalllistUserComponent,
-    ConferenceRoomListComponent,
-     UserEditComponent ,
-     AdminApprovalComponent,
-    AddHallComponent 
-
+    FontAwesomeModule
   ],
 
   providers: [],

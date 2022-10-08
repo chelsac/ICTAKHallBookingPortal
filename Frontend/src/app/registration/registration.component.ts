@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from '../services/users/user.service';
 
 @Component({
   selector: 'app-registration',
@@ -12,20 +14,40 @@ export class RegistrationComponent implements OnInit {
   loading = false;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private userService: UserService
+  ) { }
 
-  ngOnInit(){
+  ngOnInit() {
+    this.createForm();
+  }
+
+
+  createForm() {
     this.registerForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
       jobTitle: ['', Validators.required]
-  });
+    });
   }
 
-  onSubmit() {
-    
-  }
+  register() {
 
+    if (this.registerForm.invalid) {
+      return;
+    }
+
+    this.userService.addUser(this.registerForm.value).subscribe({
+      next: (result: any) => {
+        this.router.navigate(['/login']);
+      },
+      error: (err: any) => {
+        console.log(err);
+      }
+    });
+  }
 }
