@@ -1,0 +1,108 @@
+
+  .container {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    font-family: 'lato', sans-serif;
+    }
+  
+  h2 {
+    font-size: 26px;
+    margin: 20px 0;
+    text-align: center;
+
+  }
+  small {
+    font-size: 0.5em;
+  }
+  
+    li {
+      border-radius: 3px;
+      padding: 25px 30px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .table-header {
+      background-color: rgb(51, 51, 51);
+      color: white;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 5px;
+    }
+    .table-row {
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      transition: all .3s ease-in-out;
+      border-radius: 5px;
+    }
+    .table-row:hover {
+      transform: scale(1.1);
+    }
+    .col-1 {
+       flex-basis: 10%;
+    }
+    .col-2 {
+      flex-basis: 20%;
+    }
+    .col-3 {
+       flex-basis: 20%;
+    }
+    .col-4 {
+       flex-basis: 30%;
+    }
+    .col-5 {
+        flex-basis: 25%;
+      }
+    
+    @media all and (max-width: 767px) {
+      .table-header {
+        display: none;
+      }
+      .table-row{
+        
+      }
+      li {
+        display: block;
+      }
+      .col {
+        
+        flex-basis: 100%;
+        
+      }
+
+    }
+    .faviconimg{
+      border: solid 0px;
+      margin-left: 10px;
+      margin-right: 10px;
+      font-size: 20px;
+      color: black;
+      background-color: #ffffff;
+      box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.3);
+      border-radius: 5px;
+      transition: all .4s ease-in-out;
+    }
+    .faviconimg:hover{
+      background-color:black;
+      color: white;
+      box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.3);
+      transform: scale(1.1);
+    }
+
+    @media only screen and (max-width: 600px) {
+      /* For tablets: */
+    .faviconimg{
+      margin-left: 0px;
+      margin-right: 0px;
+    } 
+    }
+
+    @media only screen and (max-width: 875px) {
+      .faviconimg{
+      margin-right: 0px;
+    } 
+    }

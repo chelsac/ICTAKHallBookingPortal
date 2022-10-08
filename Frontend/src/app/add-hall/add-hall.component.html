@@ -1,0 +1,40 @@
+<!-- Default form add book -->
+<form #addhall="ngForm" (ngSubmit)="addhallfn()" class="container addhall text-center border border-light p-5 justify-content-center">
+
+
+
+    <p class="h4" >Add Hall</p>
+
+    <!-- Hall Name -->
+    <input id="hallName" name="name" type="text" [(ngModel)]="hall.name" class="form-control form-control-lg" placeholder="Hall Name" required >
+    
+    <br>
+
+    <!-- Seating Capacity -->
+    <input id="seatingCapacity" name="capacity" [(ngModel)]="hall.capacity" type="text"  class="form-control form-control-lg" placeholder="Seating Capacity" required >
+    
+    <br>
+        
+    <!-- Location -->
+    <input id="location" name="location" type="text" [(ngModel)]="hall.location"  class="form-control form-control-lg" placeholder="Location" required >    
+
+    <br>
+    <!-- Image -->
+    <input id="image" name="image" type="text" [(ngModel)]="hall.image"  class="form-control form-control-lg" placeholder="Image URL" required >
+
+
+    <br>
+    <!-- About -->
+    <div class="form-group">
+        <textarea id="about" name="description" [(ngModel)]="hall.description" class="form-control form-control-lg rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="About Hall (less than 150 words)" required ></textarea>
+    </div>
+
+    <br>
+
+
+    <!-- Send button -->
+    <button id="addbtn" class="btn" type="submit">Add Hall</button>
+   
+  
+</form>
+

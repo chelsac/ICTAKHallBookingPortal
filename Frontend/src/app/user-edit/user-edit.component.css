@@ -1,0 +1,21 @@
+.edituser{
+    margin-top: 50px;
+    width: 750px;
+    border: 1px solid #ced4da !important;
+    background-color: white;
+}
+
+.card {
+    width: 700px;
+    height: 550px;
+    margin-top: 100px;
+    background: black;
+    opacity: .75;
+    color: white;
+}
+
+.editbtn{
+    width: 80px;
+    height: 35px;
+    font-size: 14px !important;
+}

@@ -1,0 +1,79 @@
+img{
+    height: 130px;
+    margin-left: 41%;
+    margin-top: 25px;
+}
+
+h1{
+    margin-left: 37%;
+    font-family: fantasy;
+    font-size: xx-large;
+    /* font-style: italic; */
+    color: #004d40;
+    margin-top: 25px;
+    
+    
+}
+
+.login_fields{
+    margin-left: 37%;
+    
+}
+.txt_field input{
+    width: 30%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border:none;
+    background: none;
+    outline: none;
+    color: #004d40;
+    transition: .10s;
+    border-bottom:2px solid #004d40;
+    margin-left: 0px;
+    
+    
+          
+}
+
+.pass{
+    color: #a6a6a6;
+    cursor: pointer;
+}
+
+.pass:hover{
+    text-decoration: underline;
+}
+
+button{
+    width: 30%;
+    height: 50px;
+    border: 1px solid;
+    background: #004d40;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    transition: .5s ease-in-out;
+    font-family: sans-serif;
+}
+
+.anchor{
+    color: white;
+    text-decoration: none;
+}
+
+.signup_link{
+    margin-right: 30%;
+    margin-top: 10px;
+    margin-left: 40px;
+    font-size: 16px;
+    color: #004d40;
+}
+
+.signup_link a:hover{
+    text-decoration: underline;
+    
+}
+

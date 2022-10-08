@@ -1,0 +1,67 @@
+
+<!-- <form class="container" [formGroup]="updateForm" (ngSubmit)="editUser()">
+  
+  <div class="row">
+    <div class="col-md-12">
+      <label  class="form-label">Firstname</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="user.title" formControlName="firstName">
+
+    </div>
+    <div class="col-md-12" >
+      <label  class="form-label">Lastname</label>
+      <input type="text" class="form-control" id="job" [(ngModel)]="user.title" formControlName="lastName">
+
+    </div>
+    <div class="col-md-12">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="user.title" formControlName="email">
+
+    </div>
+    <div class="col-md-12">
+      <label  class="form-label">Job Title</label>
+      <input type="number" class="form-control" id="phone" [(ngModel)]="user.title" formControlName="jobTitle">
+
+    </div>
+
+    <button type="button" class="btn-u btn-success">Update</button>
+  </div>
+  </form>
+   -->
+
+
+   <form class="container edituser border-primary  border border-light p-5 justify-content-center"  [formGroup]="updateForm" (ngSubmit)="editUser()">
+
+
+
+    <p class="h2 mb-4">Edit User</p>
+
+    <br>
+
+    <!-- firstName -->
+    <input id="firstName" name="firstName" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.firstName" formControlName="firstName" placeholder="Firstname">
+
+    <br>
+    <!-- lastName -->
+    <input id="lastName" name="lastName" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.lastName" formControlName="lastName" placeholder="Lastname">
+
+    <br>
+    <!-- email -->
+    <input id="email" name="email" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.email" formControlName="email" placeholder="Email">
+
+    <br>
+    <!-- jobTitle -->
+    <input id="jobTitle" name="jobTitle" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.jobTitle" formControlName="jobTitle" placeholder="Job Title">
+
+    <br>
+
+
+    <!-- Send button -->
+    <div class="text-center">
+      <button id="editbtn" class="btn btn-success m-2 editbtn" type="submit">Edit User</button>
+
+    <!-- Cancel button --> 
+    <button id="cancelbtn" class="btn btn-secondary m-2 editbtn" (click)="cancel()"> Cancel</button>
+    </div>
+
+
+</form>

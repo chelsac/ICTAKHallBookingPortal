@@ -1,0 +1,23 @@
+<div>
+    <h2>Boooking Details</h2>
+    <h4>ICTAK ID</h4>
+    <input type="text">
+    <h4>Associate Name</h4>
+    <input type="text">
+    <h4>Hall Name</h4>
+    <input type="text">
+    <h4>Date</h4>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label></mat-label>
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <input matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <h4>Time Duration</h4>
+    <p>Start Time</p>
+    <input type="time">
+    <p>End Time</p>
+    <input type="time">
+    <button>Submit</button>
+</div>
