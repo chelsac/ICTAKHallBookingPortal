@@ -27,7 +27,7 @@ import { BookinglistingComponent } from './bookinglisting/bookinglisting.compone
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule } from '@fontawesome/angular-fontawesome';
 
 import { UsersComponent } from './users/users.component';
 
