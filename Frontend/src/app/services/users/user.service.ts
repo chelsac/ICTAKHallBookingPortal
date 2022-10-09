@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User, Cred } from '../../models/user';
+import { User } from '../../models/user';
 
 const baseUrl = 'http://localhost:4000/api/';
 
@@ -21,10 +21,6 @@ export class UserService {
 
   addUser(data: User): Observable<HttpResponse<any>> {
     return this.http.post<HttpResponse<any>>(baseUrl + 'users/addUser', data, { observe: 'response' });
-  }
-
-  checkUser(data: Cred): Observable<HttpResponse<any>> {
-    return this.http.post<HttpResponse<any>>(baseUrl + 'users/checkUser', data, { observe: 'response' });
   }
 
   editUser(data: User): Observable<HttpResponse<any>> {

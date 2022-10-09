@@ -3,6 +3,8 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const loginRoute = require('./data/login.js');
+const authRoute = require('./data/auth.js');
 const userRoute = require('./data/users.js');
 const hallRoute = require('./data/hall.js');
 
@@ -35,9 +37,9 @@ const port = process.env.PORT || 4000;
 
 
 // Routes Configuration
-app.use('/api/users', userRoute);
-app.use('/api/hall', hallRoute);
-
+app.use('/api/login', loginRoute);
+app.use('/api/users', authRoute, userRoute);
+app.use('/api/hall', authRoute, hallRoute);
 
 
 

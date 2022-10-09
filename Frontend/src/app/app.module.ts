@@ -34,10 +34,12 @@ import { UsersComponent } from './users/users.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { AdminApprovalComponent } from './admin-approval/admin-approval.component';
 import { AddHallComponent } from './add-hall/add-hall.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HallUpdateComponent } from './hall-update/hall-update.component';
 import { UserDeleteComponent } from './user-delete/user-delete.component';
 import { MessageComponent } from './message/message.component';
+import { HttpConfigInterceptor } from './Interceptor/auth_interceptor';
+import { ErrorInterceptor } from './Interceptor/error_interceptor';
 
 
 
@@ -88,7 +90,10 @@ imports: [
     MatDialogModule
   ],
 
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

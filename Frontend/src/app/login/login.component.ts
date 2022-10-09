@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from '../services/users/user.service';
+import { AuthService } from '../services/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit{
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private userService: UserService
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -37,9 +37,9 @@ export class LoginComponent implements OnInit{
     if (this.loginForm.invalid) {
       return;
     }
-    this.userService.checkUser(this.loginForm.value).subscribe({
+    this.authService.checkUser(this.loginForm.value).subscribe({
       next: (result: any) => {
-        //this.userService.isLoggedIn=true;
+        localStorage.setItem('Token', result.body.token);
         this.router.navigate(['halllist-user']);
       },
       error: (err: any) => {

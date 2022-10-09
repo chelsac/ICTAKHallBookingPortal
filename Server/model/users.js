@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const jwt = require("jsonwebtoken");
 const Schema = mongoose.Schema;
 
 // List of columns for User schema
@@ -13,5 +14,9 @@ let User = new Schema ({
     collection: 'users'
   }
 );
+
+User.methods.generateJwtToken = async (payload, secret, expires) => {
+  return jwt.sign(payload, secret, expires)
+}
 
 module.exports = mongoose.model('User', User);

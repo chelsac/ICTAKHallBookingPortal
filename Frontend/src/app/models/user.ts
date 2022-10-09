@@ -5,11 +5,12 @@ export class User {
     email: string;
     password: string;
     jobTitle: string;
-    // token: string;
+    
 }
 
 export class Cred{
     _id: number;
     email: string;
     password: string;
+    // token: string;
 }
