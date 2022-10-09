@@ -37,6 +37,7 @@ import { AddHallComponent } from './add-hall/add-hall.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HallUpdateComponent } from './hall-update/hall-update.component';
 import { UserDeleteComponent } from './user-delete/user-delete.component';
+import { MessageComponent } from './message/message.component';
 
 
 
@@ -59,7 +60,8 @@ import { UserDeleteComponent } from './user-delete/user-delete.component';
     AdminApprovalComponent,
     AddHallComponent,
     HallUpdateComponent,
-    UserDeleteComponent 
+    UserDeleteComponent,
+    MessageComponent 
   ],
  
 imports: [ 

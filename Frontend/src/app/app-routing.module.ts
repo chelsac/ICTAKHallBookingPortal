@@ -14,6 +14,7 @@ import { AdminApprovalComponent } from './admin-approval/admin-approval.componen
 import { AddHallComponent } from './add-hall/add-hall.component';
 import { HallUpdateComponent } from './hall-update/hall-update.component';
 import { UserDeleteComponent } from './user-delete/user-delete.component';
+import { UserViewComponent } from './user-view/user-view.component';
 
 
 
@@ -44,6 +45,7 @@ const routes: Routes = [
   {path: 'user-edit', component: UserEditComponent},
   { path: 'user-list', component: UserListComponent },
   { path: 'user-delete', component: UserDeleteComponent },
+  { path: 'user-view', component: UserViewComponent}
     // { path: 'registration', component: RegistrationComponent }
   ]
 

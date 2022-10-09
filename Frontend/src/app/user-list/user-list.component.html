@@ -2,7 +2,7 @@
 <div class="container">
 <ul class="responsive-table">
     <li class="table-header">
-      <div class="col col-1">Id</div>
+      <!-- <div class="col col-1">Id</div> -->
       <div class="col col-2">Name</div>
       <div class="col col-3">Job Title</div>
       <div class="col col-4">Email</div>
@@ -10,7 +10,7 @@
     </li>
 
     <li class="table-row" *ngFor = "let user of users">
-      <div class="col col-1" data-label="Id">1.</div>
+      <!-- <div class="col col-1" data-label="Id">1.</div> -->
       <div class="col col-2" data-label="Name">{{user.firstName}} {{user.lastName}}</div>
       <div class="col col-3" data-label="JobTitle">{{user.jobTitle}}</div>
       <div class="col col-4" data-label="Email">{{user.email}}</div>

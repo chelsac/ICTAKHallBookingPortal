@@ -12,6 +12,7 @@ import { UserService } from '../services/users/user.service';
 export class LoginComponent implements OnInit{
   title='Hall Booking Portal';
   loginForm: any;
+  error: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -45,7 +46,7 @@ export class LoginComponent implements OnInit{
         console.log(err);
        // this.userService.isLoggedIn=false;
         this.loginForm.reset();
-       // this.error = err.error.msg;
+       this.error = err.error.msg;
       }
     });
   }

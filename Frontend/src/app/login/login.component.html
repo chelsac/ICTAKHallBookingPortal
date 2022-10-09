@@ -2,8 +2,8 @@
 <img src="../../assets/images/undraw_profile_pic_ic-5-t (2).svg" alt="">
 
 <h1>{{title}}</h1>
-<form class="login_fields">
-    <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+
+    <form class="login_fields" [formGroup]="loginForm" (ngSubmit)="loginUser()">
         <div class="txt_field">
             <input type="email" formControlName="email" required  name="email" placeholder="Email" ngModel>
             <br />
@@ -27,6 +27,10 @@
         <div class="signup_link">
             Not a member? <a href="#">SignUp</a>
         </div>
+
+
+        <div *ngIf="error" style="margin-top: 20px;">
+            <app-message [error]="error"></app-message><br />
+        </div>
         <!-- <img src="../../assets/images/undraw_hello_re_3evm.svg" class="hello-img"alt=""> -->
     </form>
-</form>
