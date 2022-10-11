@@ -22,6 +22,7 @@ export class UserEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.createForm();
+    this.getUserDetails();
   }
 
   createForm() {
@@ -32,6 +33,17 @@ export class UserEditComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       jobTitle: ['', Validators.required]
     });
+  }
+
+  getUserDetails(){
+    // this.userService.getUser(this.user._id).subscribe({
+    //   next: (result: any) => {
+    //     this.user= result.body;
+    //   },
+    //   error: (err: any) => {
+    //     console.log(err);
+    //   }
+    // });
   }
 
 

@@ -23,6 +23,10 @@ export class UserService {
     return this.http.post<HttpResponse<any>>(baseUrl + 'users/addUser', data, { observe: 'response' });
   }
 
+  getUser(data: User): Observable<HttpResponse<any>> {
+    return this.http.post<HttpResponse<any>>(baseUrl + 'users/getUser/', data, { observe: 'response' });
+  }
+
   editUser(data: User): Observable<HttpResponse<any>> {
     return this.http.put<HttpResponse<any>>(baseUrl + 'users/editUser/' + data._id, data, { observe: 'response' });
   }

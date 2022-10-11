@@ -35,7 +35,7 @@ export class UserListComponent implements OnInit {
   }
 
   goToEditUser(user: any){
-    this.router.navigate(['user-edit'], { state: user });
+    this.router.navigate(['user-edit'], { state: user._id });
   }
 
 

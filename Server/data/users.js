@@ -15,6 +15,17 @@ userRoute.route('/getUsers').get(function (req, res) {
 });
 
 
+// To Get User Details
+userRoute.route('/getUser/:id').get(function (req, res) {
+  userModel.findById(req.params.id, function (err, user) {
+    if (!user)
+        return next(new Error('Unable To Find User With This Id'));
+    else {
+      res.json(user);
+      }
+  });
+});
+
 
 // To Add New User
 userRoute.route('/addUser').post(function (req, res) {
