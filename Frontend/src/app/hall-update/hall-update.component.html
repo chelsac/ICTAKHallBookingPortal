@@ -1,5 +1,5 @@
 <!-- Default form add book -->
-<form #addhall="ngForm" (ngSubmit)="update()" class="container addhall text-center border border-light p-5 justify-content-center">
+<form #addhall="ngForm" class="container addhall text-center border border-light p-5 justify-content-center">
 
 
 
@@ -64,11 +64,14 @@
     <br>
 
 
+            <!-- Send button -->
+    <div class="text-center">
+        <button id="editbtn" class="btn btn-success m-2 editbtn" (click)="update()" type="submit">Update</button>
   
+      <!-- Cancel button --> 
+      <button id="cancelbtn" class="btn btn-secondary m-2 editbtn" (click)="cancel()"> Cancel</button>
+      </div>
 
-
-    <!-- Send button -->
-    <button id="addbtn" class="btn" type="submit">Update</button>
    
   
 </form>

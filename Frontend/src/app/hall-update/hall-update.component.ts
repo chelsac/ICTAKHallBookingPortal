@@ -35,4 +35,8 @@ export class HallUpdateComponent implements OnInit {
     
   }
 
+  cancel(){
+    location.pathname = ('/conferenceRooms');
+  }
+
 }
