@@ -7,7 +7,7 @@ bookingRoute.route('/getbookingweek/:userid').get(function (req, res) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
     const userid = req.params.userid;
-    bookingdetails.findOne({ "userid": userid })
+    bookingdetails.find({ "userid": userid })
         .then(function (bookingweek) {
             console.log(bookingweek)
             res.send(bookingweek);

@@ -1,0 +1,38 @@
+img{
+    height: 280px;
+}
+
+.mytexth{
+    margin-top: 90px;
+    font-size:45px!important;
+    font-family:cursive;
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 5px 15px;
+}
+
+.mytextp{
+    margin-top: 15px;
+    font-size:20px!important;
+    font-family:cursive;
+    text-shadow: rgba(0, 0, 0, 0.99) 0px 5px 15px;
+    margin-bottom: 20px;
+}
+
+.mybutton{
+    background-color: #004d40;
+    color: white;
+}
+
+.mybooking{
+    margin: 20px;
+
+}
+
+.mycard{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.myheading{
+    padding: 10px;
+    font-size:15px!important;
+    font-family:cursive;
+}

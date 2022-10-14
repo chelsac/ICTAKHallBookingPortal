@@ -10,7 +10,14 @@ import { UserService } from '../services/users/user.service';
   styleUrls: ['./homeuser.component.css']
 })
 export class HomeuserComponent implements OnInit {
-  booking={};
+  booking=[{
+    userid:"",
+    name:"",
+    hallname:"",
+    date:"",
+    starttime:"",
+    endtime:""
+  }];
   constructor(private bookingservice:BookingService,private userservice:UserService,private router: Router) { }
 
   ngOnInit(): void {
