@@ -7,6 +7,7 @@ const loginRoute = require('./data/login.js');
 const authRoute = require('./data/auth.js');
 const userRoute = require('./data/users.js');
 const hallRoute = require('./data/hall.js');
+const bookingRoute = require('./data/booking.js');
 
 // MongoDB Databse url
 var mongoDatabase = 'mongodb+srv://test:test@cluster0.ejygs4h.mongodb.net/ICTAKHallBookingPortal?retryWrites=true&w=majority';
@@ -40,7 +41,7 @@ const port = process.env.PORT || 4000;
 app.use('/api/login', loginRoute);
 app.use('/api/users', authRoute, userRoute);
 app.use('/api/hall', authRoute, hallRoute);
-
+app.use('/api/booking', authRoute, bookingRoute);
 
 
 // Staring our express server

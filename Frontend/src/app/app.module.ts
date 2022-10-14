@@ -40,6 +40,7 @@ import { UserDeleteComponent } from './user-delete/user-delete.component';
 import { MessageComponent } from './message/message.component';
 import { HttpConfigInterceptor } from './Interceptor/auth_interceptor';
 import { ErrorInterceptor } from './Interceptor/error_interceptor';
+import { HomeuserComponent } from './homeuser/homeuser.component';
 
 
 
@@ -63,7 +64,8 @@ import { ErrorInterceptor } from './Interceptor/error_interceptor';
     AddHallComponent,
     HallUpdateComponent,
     UserDeleteComponent,
-    MessageComponent 
+    MessageComponent,
+    HomeuserComponent 
   ],
  
 imports: [ 

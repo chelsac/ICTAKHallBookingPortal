@@ -35,6 +35,10 @@ export class UserService {
       return this.http.delete<HttpResponse<any>>(baseUrl + 'users/deleteUser/' + data, { observe: 'response' });
   }
 
+  getbooking(email:any){
+    return this.http.get<HttpResponse<any>>(baseUrl + 'users/booking/' + email, { observe: 'response' });
+  }
+
 
 
 

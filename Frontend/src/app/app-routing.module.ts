@@ -15,6 +15,7 @@ import { AddHallComponent } from './add-hall/add-hall.component';
 import { HallUpdateComponent } from './hall-update/hall-update.component';
 import { UserDeleteComponent } from './user-delete/user-delete.component';
 import { UserViewComponent } from './user-view/user-view.component';
+import { HomeuserComponent } from './homeuser/homeuser.component';
 
 
 
@@ -45,7 +46,8 @@ const routes: Routes = [
   {path: 'user-edit', component: UserEditComponent},
   { path: 'user-list', component: UserListComponent },
   { path: 'user-delete', component: UserDeleteComponent },
-  { path: 'user-view', component: UserViewComponent}
+  { path: 'user-view', component: UserViewComponent},
+  {path:'homeuser',component:HomeuserComponent}
     // { path: 'registration', component: RegistrationComponent }
   ]
 

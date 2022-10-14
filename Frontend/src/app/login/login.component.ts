@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit{
     this.authService.checkUser(this.loginForm.value).subscribe({
       next: (result: any) => {
         localStorage.setItem('Token', result.body.token);
+        localStorage.setItem('emailid', this.loginForm.value.email);
         this.router.navigate(['halllist-user']);
       },
       error: (err: any) => {

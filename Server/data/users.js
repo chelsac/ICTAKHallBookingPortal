@@ -1,4 +1,5 @@
 const express = require('express');
+const Users = require('../Model/Users');
 const userRoute = express.Router();
 const userModel = require('../Model/Users');
 
@@ -100,5 +101,36 @@ userRoute.route('/deleteUser/:id').delete(function (req, res) {
         else res.json('User Deleted Successfully');
     });
 });
+
+
+//to get user id
+// userRoute.route('/booking/:email').get(function (req, res) {
+//   const email = req.params.email;
+//   userModel.findOne({ "email": email }, function (err, user) {
+//     if (!user)
+//         return next(new Error('Unable To Find User With This Id'));
+//     else {
+//       console.log(user);
+//       console.log(user.email);
+//       console.log(user.userid);
+//       res.json({ message: "User Has Been Updated Successfully." });
+//       }
+//   });
+// });
+
+userRoute.route('/booking/:email').get(function (req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
+  const email = req.params.email;
+  userModel.findOne({ "email": email }).then((_user) => {
+    console.log(_user);
+      res.json(_user);
+  })
+
+})
+
+
+
+
 
 module.exports = userRoute;
