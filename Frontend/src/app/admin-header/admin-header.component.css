@@ -8,10 +8,15 @@ img{
     background-color: #004d40 !important;
     font-size: 20px;
     padding: 6px;
+    font-family: ui-sans-serif;
 }
 
 .nav-link{
     color: white !important;
+}
+
+.nav-item{
+    padding: 5px;
 }
 
 .dropdown-item{
@@ -21,5 +26,5 @@ img{
 
 .signout{
     color: white;
-    font-size: 18px;
+    font-size: 20px;
 }
