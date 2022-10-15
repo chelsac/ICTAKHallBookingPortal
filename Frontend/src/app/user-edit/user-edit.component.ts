@@ -22,7 +22,7 @@ export class UserEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.createForm();
-    this.getUserDetails();
+   // this.getUserDetails();
   }
 
   createForm() {

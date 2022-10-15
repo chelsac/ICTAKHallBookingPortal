@@ -9,6 +9,7 @@ let User = new Schema ({
     lastName: { type: String },
     email: { type: String },
     password: { type: String },
+    role: { type: String },
     jobTitle: { type: String}
   },
   {

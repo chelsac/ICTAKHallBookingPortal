@@ -24,7 +24,7 @@ export class UserService {
   }
 
   getUser(data: User): Observable<HttpResponse<any>> {
-    return this.http.post<HttpResponse<any>>(baseUrl + 'users/getUser/', data, { observe: 'response' });
+    return this.http.get<HttpResponse<any>>(baseUrl + 'users/getUser/' + data, { observe: 'response' });
   }
 
   editUser(data: User): Observable<HttpResponse<any>> {

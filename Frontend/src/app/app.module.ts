@@ -41,6 +41,9 @@ import { MessageComponent } from './message/message.component';
 import { HttpConfigInterceptor } from './Interceptor/auth_interceptor';
 import { ErrorInterceptor } from './Interceptor/error_interceptor';
 import { HomeuserComponent } from './homeuser/homeuser.component';
+import { UserHeaderComponent } from './user-header/user-header.component';
+import { AdminHeaderComponent } from './admin-header/admin-header.component';
+import { UserViewComponent } from './user-view/user-view.component';
 
 
 
@@ -65,7 +68,10 @@ import { HomeuserComponent } from './homeuser/homeuser.component';
     HallUpdateComponent,
     UserDeleteComponent,
     MessageComponent,
-    HomeuserComponent 
+    HomeuserComponent,
+    UserHeaderComponent,
+    AdminHeaderComponent, 
+    UserViewComponent 
   ],
  
 imports: [ 

@@ -11,6 +11,7 @@ const baseUrl = 'http://localhost:4000/api/';
 })
 
 export class AuthService {
+  loggedUserRole: String;
 
   constructor(
     private http: HttpClient,
