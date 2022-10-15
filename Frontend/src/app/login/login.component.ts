@@ -39,19 +39,26 @@ export class LoginComponent implements OnInit{
     }
     this.authService.checkUser(this.loginForm.value).subscribe({
       next: (result: any) => {
+        this.authService.loggedUserRole = result.body.userCredentials.role;
         localStorage.setItem('Token', result.body.token);
         localStorage.setItem('emailid', this.loginForm.value.email);
-        this.router.navigate(['halllist-user']);
+        localStorage.setItem('userLoginStatus', 'true');
+        localStorage.setItem('role', result.body.userCredentials.role);
+        if(this.authService.loggedUserRole=='admin'){
+          //navigate to adminhome
+          this.router.navigate(['home']);
+        }else{
+          //navigate to userhome
+          this.router.navigate(['homeuser']);
+        }
       },
       error: (err: any) => {
         console.log(err);
-       // this.userService.isLoggedIn=false;
         this.loginForm.reset();
        this.error = err.error.msg;
       }
     });
   }
-  
 
 }
 
