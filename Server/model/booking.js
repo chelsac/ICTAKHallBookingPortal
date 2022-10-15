@@ -7,7 +7,8 @@ const bookingSchema=mongoose.Schema(
         hallname:String,
         date:String,
         starttime:String,
-        endtime:String
+        endtime:String,
+        status:String
     }
 );
 

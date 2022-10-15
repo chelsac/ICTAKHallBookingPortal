@@ -1,7 +1,12 @@
 img{
     height: 280px;
 }
-
+.myimg{
+    height: 550px;
+}
+.myoverlay{
+    margin-top: 100px
+}
 .mytexth{
     margin-top: 90px;
     font-size:45px!important;
@@ -23,8 +28,9 @@ img{
 }
 
 .mybooking{
-    margin: 20px;
-
+    margin: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .mycard{
@@ -35,4 +41,5 @@ img{
     padding: 10px;
     font-size:15px!important;
     font-family:cursive;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }

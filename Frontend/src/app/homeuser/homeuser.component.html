@@ -1,5 +1,5 @@
 <div class="card bg-dark text-white">
-    <img src="../../assets/images/homeuser.jpg" class="card-img" alt="...">
+    <img src="../../assets/images/homeuser.jpg" class="card-img" alt="..." *ngIf="booking.length>0">
     <div class="card-img-overlay">
         <h1 class="text-center mytexth">Welcome to ICTAK Hall Booking Portal</h1>
         <p class="text-center mytextp">Plan your meetings effortlessly!</p>
@@ -8,6 +8,17 @@
         </div>
     </div>
   </div>
+  <div class="card bg-dark text-white" *ngIf="booking.length==0">
+    <img src="../../assets/images/homeuser.jpg" class="card-img myimg" alt="...">
+    <div class="card-img-overlay myoverlay">
+        <h1 class="text-center mytexth">Welcome to ICTAK Hall Booking Portal</h1>
+        <p class="text-center mytextp">Plan your meetings effortlessly!</p>
+        <div class="text-center">
+        <a routerLink="halllist-user" class="btn mybutton">Explore</a>
+        </div>
+    </div>
+  </div>
+
 
   <div class="row row-cols-1 row-cols-md-4 mybooking">
  
@@ -19,6 +30,7 @@
                 <p class="card-text"><b>Date: </b> {{i.date}}</p>
                 <p class="card-text"><b>Starting Time: </b> {{i.starttime}}</p>
                 <p class="card-text"><b>Ending Time: </b> {{i.endtime}}</p>
+                <p class="card-text"><b>Status: </b> {{i.status}}</p>
                 <button id="editbtn" class="btn btn-success m-2 editbtn"  type="submit">Update</button>
   
                 <!-- Cancel button --> 
