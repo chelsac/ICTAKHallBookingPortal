@@ -14,29 +14,17 @@ bookingRoute.route('/getbookingweek/:userid').get(function (req, res) {
         })
 })
 
-// userid:String,
-// name:String,
-// hallname:String,
-// date:String,
-// starttime:String,
-// endtime:String,
-// status:String
-//adding booking data
-bookingRoute.route('/addbooking').post(function (req, res) {
-    var item = {
-        userid: req.body.userid,
-        name: req.body.name,
-        date: req.body.date,
-        starttime: req.body.starttime,
-        endtime: req.body.endtime,
-        status: req.body.status
-    };
 
-    let data = new bookingdetails(item);
-    data.save();
-    bookingdetails.find().then(function (data) {
-        res.send(data);
-    })
-})
+// userRoute.route('/booking/:email').get(function (req, res) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
+//     const email = req.params.email;
+//     userModel.findOne({ "email": email }).then((_user) => {
+//       console.log(_user);
+//         res.json(_user);
+//     })
+  
+//   })
+
 
 module.exports = bookingRoute;

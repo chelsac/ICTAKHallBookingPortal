@@ -1,27 +1,25 @@
 <app-user-header></app-user-header>
 
 <div>
-  <form #addbooking="ngForm" (ngSubmit)="addbookingfn()">
     <h2>Boooking Details</h2>
     <h4>ICTAK ID</h4>
-    <input id="userid" name="userid" type="text" required [(ngModel)]="booking.userid">
+    <input type="text">
     <h4>Associate Name</h4>
-    <input type="text" id="name" name="name" required [(ngModel)]="booking.name">
+    <input type="text">
     <h4>Hall Name</h4>
-    <input type="text" id="hallname" name="hallname" required  [(ngModel)]="booking.hallname">
+    <input type="text">
     <h4>Date</h4>
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label></mat-label>
       <mat-hint>MM/DD/YYYY</mat-hint>
-      <input type="text" id="date" name="date" required matInput [matDatepicker]="picker" [(ngModel)]="booking.date">
+      <input matInput [matDatepicker]="picker">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <h4>Time Duration</h4>
     <p>Start Time</p>
-    <input type="time" id="starttime" name="starttime" required  [(ngModel)]="booking.starttime">
+    <input type="time">
     <p>End Time</p>
-    <input type="time" id="endtime" name="endtime" required  [(ngModel)]="booking.endtime">
-    <button type="submit">Submit</button>
-  </form>
+    <input type="time">
+    <button><a href="bookinglist">Submit</a></button>
 </div>
