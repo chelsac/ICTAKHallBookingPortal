@@ -1,25 +1,17 @@
 <app-admin-header></app-admin-header>
 
 <!-- <h2>Register</h2> -->
-<form [formGroup]="registerForm" (ngSubmit)="register()">
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div class="heading-align"><p class="heading">Lets Get Started !!</p></div>
     <div class="form-row">
 
         <div class="col">
-            <div class="form-group inputalign form-row">
-                <div class="col">
-                    <label for="firstName">First Name</label>
-                    <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.firstName.errors }" />
-                    <div *ngIf="submitted && registerForm.firstName.errors" class="invalid-feedback">
-                        <div *ngIf="registerForm.firstName.errors.required">First Name is required</div>
-                    </div>
-                </div>
-                <div class="col">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.lastName.errors }" />
-                    <div *ngIf="submitted && registerForm.lastName.errors" class="invalid-feedback">
-                        <div *ngIf="registerForm.lastName.errors.required">Last Name is required</div>
-                    </div>
+
+            <div class="form-group inputalign">
+                <label for="name">Name</label>
+                <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.name.errors }" />
+                <div *ngIf="submitted && registerForm.name.errors" class="invalid-feedback">
+                    <div *ngIf="registerForm.name.errors.required">Name is required</div>
                 </div>
             </div>
             <div class="form-group inputalign">
@@ -36,6 +28,46 @@
                     <div *ngIf="registerForm.password.errors.required">Password is required</div>
                     <div *ngIf="registerForm.password.errors.minlength">Password must be at least 6 characters</div>
                 </div>
+            </div> 
+            <div class="form-group inputalign">
+                <label for="mobileno">Mobile No:</label>
+                <input type="number" formControlName="mobileno" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.mobileno.errors }" />
+                <div *ngIf="submitted && registerForm.mobileno.errors" class="invalid-feedback">
+                    <div *ngIf="registerForm.mobileno.errors.required">Mobile No is required</div>
+                    <div *ngIf="registerForm.mobileno.rrors.minlength">Mobile No: must be at least 10 numbers</div>
+                </div>
+            </div>
+            <div class="form-group inputalign">
+                <label for="address">Address</label>
+                <input type="text" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.address.errors }" />
+                <div *ngIf="submitted && registerForm.address.errors" class="invalid-feedback">
+                    <div *ngIf="registerForm.address.errors.required">Address is required</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group inputalign form-row">
+                    <div class="col">
+                        <label for="district">District</label>
+                        <input type="text" formControlName="district" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.district.errors }" />
+                        <div *ngIf="submitted && registerForm.district.errors" class="invalid-feedback">
+                            <div *ngIf="registerForm.district.errors.required">District is required</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="state">State</label>
+                        <input type="text" formControlName="state" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.state.errors }" />
+                        <div *ngIf="submitted && registerForm.state.errors" class="invalid-feedback">
+                            <div *ngIf="registerForm.state.errors.required">Last Name is required</div>
+                        </div>
+                    </div>
+                </div>
+             </div>   
+             <div class="form-group inputalign">
+                <label for="pincode">Pincode</label>
+                <input type="number" formControlName="pincode" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.pincode.errors }" />
+                <div *ngIf="submitted && registerForm.pincode.errors" class="invalid-feedback">
+                    <div *ngIf="registerForm.pincode.errors.required">Pincode is required</div>
+                </div>
             </div>
             <div class="form-group inputalign">
                 <label for="jobTitle">Job Title</label>
@@ -44,6 +76,37 @@
                     <div *ngIf="registerForm.jobTitle.errors.required">Job Title is required</div>
                 </div>
             </div>
+            <div class="form-group inputalign">
+                <label for="department">Department</label>
+                <input type="text" formControlName="department" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.department.errors }" />
+                <div *ngIf="submitted && registerForm.department.errors" class="invalid-feedback">
+                    <div *ngIf="registerForm.department.errors.required">Departmentis required</div>
+                </div>
+            </div>
+            <div class="form-group inputalign">
+                <label for="ictakid">ICTAKID</label>
+                <input type="text" formControlName="ictakid" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.ictakid.errors }" />
+                <div *ngIf="submitted && registerForm.ictakid.errors" class="invalid-feedback">
+                    <div *ngIf="registerForm.ictakid.errors.required">ICTAKID is required</div>
+                </div>
+            </div>
+            <!-- <div class="form-group inputalign">
+                <label for="role">Role(enter admin/user)</label>
+                <input type="text" formControlName="role" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.role.errors }" />
+                <div *ngIf="submitted && registerForm.role.errors" class="invalid-feedback">
+                    <div *ngIf="registerForm.role.errors.required">Role is required</div>
+                </div>
+            </div> -->
+            <div class="form-group inputalign">
+                <label for="role">Role</label>
+                <select formControlName="role" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.role.errors }" >
+                  <option [ngValue]="null" disabled>Select Role</option>
+                  <option *ngFor="let web of roleList" [ngValue]="web.id" >{{web.name}}</option>
+                </select> 
+                <div *ngIf="submitted && registerForm.role.errors" class="invalid-feedback">
+                    <div *ngIf="registerForm.role.errors.required">Role is required</div>     
+                </div>    
+            </div>    
             <div class="form-group inputalign buttonalign">
                 <button [disabled]="loading" class="btn btn-primary">
                     <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>

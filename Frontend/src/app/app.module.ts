@@ -29,7 +29,6 @@ import { BookinglistingComponent } from './bookinglisting/bookinglisting.compone
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UsersComponent } from './users/users.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { AdminApprovalComponent } from './admin-approval/admin-approval.component';
@@ -44,6 +43,7 @@ import { HomeuserComponent } from './homeuser/homeuser.component';
 import { UserHeaderComponent } from './user-header/user-header.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { UserViewComponent } from './user-view/user-view.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -94,8 +94,8 @@ imports: [
     MatListModule,
     MatTableModule,
     MatPaginatorModule,
-    FontAwesomeModule,
-    MatDialogModule
+    MatDialogModule,
+    FontAwesomeModule
   ],
 
   providers: [

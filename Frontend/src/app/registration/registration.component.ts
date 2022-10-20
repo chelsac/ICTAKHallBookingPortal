@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../services/users/user.service';
 
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -14,6 +15,10 @@ export class RegistrationComponent implements OnInit {
   loading = false;
   submitted = false;
 
+  roleList = [ {id:1, name:"admin"},
+  {id:2,name:"user"}
+  ];
+ 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -21,36 +26,34 @@ export class RegistrationComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    
     this.createForm();
+
   }
 
 
   createForm() {
     this.registerForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
+  
+      name: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      role: ['user'],
-      jobTitle: ['', Validators.required]
+      role: ['', Validators.required],
+      jobTitle: ['', Validators.required],
+      mobileno: ['',[Validators.required,Validators.minLength(10)]],
+      address: ['',Validators.required],
+      district:['',Validators.required],
+      state:['',Validators.required],
+      pincode:['',Validators.required],
+      ictakid:['',Validators.required],
+      department:['',Validators.required]
     });
   }
 
-  register() {
-
-    if (this.registerForm.invalid) {
-      return;
-    }
+  onSubmit() {
     
-    this.userService.addUser(this.registerForm.value).subscribe({
-      next: (result: any) => {
-        this.router.navigate(['/user-list']);
-      },
-      error: (err: any) => {
-        console.log(err);
-      }
-    });
   }
+
 }
 
 //https://www.itsolutionstuff.com/post/angular-13-property-name-comes-from-an-index-signature-so-it-must-be-accessed-with-requiredexample.html
