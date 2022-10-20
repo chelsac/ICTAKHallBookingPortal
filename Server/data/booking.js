@@ -14,6 +14,18 @@ bookingRoute.route('/getbookingweek/:userid').get(function (req, res) {
         })
 })
 
+//view bookings of all users
+bookingRoute.route('/getallbooking').get(function (req, res) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
+    const userid = req.params.userid;
+    bookingdetails.find()
+        .then(function (bookingweek) {
+            console.log(bookingweek)
+            res.send(bookingweek);
+        })
+})
+
 // userid:String,
 // name:String,
 // hallname:String,
@@ -27,6 +39,7 @@ bookingRoute.route('/addbooking').post(function (req, res) {
         userid: req.body.userid,
         name: req.body.name,
         date: req.body.date,
+        hallname: req.body.hallname,
         starttime: req.body.starttime,
         endtime: req.body.endtime,
         status: req.body.status

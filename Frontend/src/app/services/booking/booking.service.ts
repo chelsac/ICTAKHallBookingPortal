@@ -13,6 +13,10 @@ export class BookingService {
     return this.http.get('http://localhost:4000/api/booking/getbookingweek/'+userid);
   }
 
+  getallbooking(){
+    return this.http.get('http://localhost:4000/api/booking/getallbooking');
+  }
+
   addbooking(data:any){
     return this.http.post<any>("http://localhost:4000/api/booking/addbooking/",data);
   }
