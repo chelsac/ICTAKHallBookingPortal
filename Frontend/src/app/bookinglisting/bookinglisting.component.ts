@@ -61,4 +61,13 @@ export class BookinglistingComponent implements OnInit {
     }
   }
 
+  delete(data: any) {
+    console.log("here");
+    this.bookingservice.deletebooking(data._id).subscribe((datas) => {
+      console.log(datas);
+    })
+    alert("Booking canceled");
+    location.pathname = ('/bookinglist');
+  }
+
 }

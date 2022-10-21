@@ -26,7 +26,7 @@ export class BookinglistComponent implements OnInit {
     return this.bookingservice.addbooking(this.booking)
     .subscribe((res)=>{
       alert("Booking succesfully added");
-      // location.pathname = ('/conferenceRooms');
+      location.pathname = ('/homeuser');
     })
   }
 

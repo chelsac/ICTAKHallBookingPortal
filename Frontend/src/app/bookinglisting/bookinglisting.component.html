@@ -25,7 +25,7 @@
       <div class="col col-7" data-label="status">{{i.status}}</div>
       <div class="col col-8">
         <button type="button" class="btn btn-success"  *ngIf="(i.status!='rejected')&&booking.length!=0">Update</button>
-        <button type="button" class="btn btn-danger"  *ngIf="i.status!='rejected'&&booking.length!=0">Cancel</button>
+        <button type="button" class="btn btn-danger" (click)="delete(i)" *ngIf="i.status!='rejected'&&booking.length!=0">Cancel</button>
       </div>
     </li>
  

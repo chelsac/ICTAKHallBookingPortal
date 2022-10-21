@@ -21,5 +21,10 @@ export class BookingService {
     return this.http.post<any>("http://localhost:4000/api/booking/addbooking/",data);
   }
 
+  deletebooking(id:any){
+    console.log(id);
+    return this.http.delete('http://localhost:4000/api/booking/deletebooking/'+id);
+  }
+
 
 }

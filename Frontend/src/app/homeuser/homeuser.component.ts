@@ -88,4 +88,13 @@ export class HomeuserComponent implements OnInit {
   
     return dates;
   }
+
+  delete(data: any) {
+    console.log("here");
+    this.bookingservice.deletebooking(data._id).subscribe((datas) => {
+      console.log(datas);
+    })
+    alert("Booking canceled");
+    location.pathname = ('/homeuser');
+  }
 }

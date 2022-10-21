@@ -52,4 +52,16 @@ bookingRoute.route('/addbooking').post(function (req, res) {
     })
 })
 
+//delete booking
+bookingRoute.route('/deletebooking/:id').delete(function (req, res) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
+    console.log(req.params.id);
+    bookingdetails.findByIdAndDelete(req.params.id).then(() => {
+        console.log('success')
+        res.send();
+    })
+
+})
+
 module.exports = bookingRoute;
