@@ -18,6 +18,7 @@ import { UserViewComponent } from './user-view/user-view.component';
 import { HomeuserComponent } from './homeuser/homeuser.component';
 import { AuthGuard } from './guards/auth.guard';
 import { Role } from './models/role';
+import { UserUpdateComponent } from './user-update/user-update.component';
 
 
 
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'booking', component: BookinglistComponent }, 
   { path: 'halllist-user', component:HalllistUserComponent},
   { path: 'bookinglist', component:BookinglistingComponent}, 
+  {path:'user-update', component:UserUpdateComponent},
 
 
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard], data: { roles: [Role.Admin]} }, //only admin

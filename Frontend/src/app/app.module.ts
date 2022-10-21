@@ -44,6 +44,7 @@ import { UserHeaderComponent } from './user-header/user-header.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { UserViewComponent } from './user-view/user-view.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { UserUpdateComponent } from './user-update/user-update.component';
 
 
 
@@ -71,7 +72,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HomeuserComponent,
     UserHeaderComponent,
     AdminHeaderComponent, 
-    UserViewComponent 
+    UserViewComponent, UserUpdateComponent 
   ],
  
 imports: [ 
