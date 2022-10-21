@@ -105,4 +105,44 @@ bookingRoute.route('/editbooking/:id').put(function (req, res) {
 
 });
 
+//booking approval
+bookingRoute.route('/statusApproved/:id').put(function (req, res) {
+    console.log("hello");
+    console.log(req.body);
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
+    bookingdetails.findByIdAndUpdate({ "_id": req.body.id._id},
+        {
+            $set: {
+
+                "status":"approved"
+
+            }
+        })
+        .then(function () {
+            res.send();
+        })
+
+});
+
+//booking approval
+bookingRoute.route('/statusRejected/:id').put(function (req, res) {
+    console.log("hello");
+    console.log(req.body);
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
+    bookingdetails.findByIdAndUpdate({ "_id": req.body.id._id},
+        {
+            $set: {
+
+                "status":"rejected"
+
+            }
+        })
+        .then(function () {
+            res.send();
+        })
+
+});
+
 module.exports = bookingRoute;

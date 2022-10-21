@@ -50,4 +50,21 @@ export class AdminApprovalComponent implements OnInit {
     console.log(this.booking);
   }
 
+  approvefn(data: any) {
+    this.bookingservice.statusApproved(data);
+    alert("Booking Approved");
+    location.pathname = ('/admin-approval');
+  }
+
+  rejectfn(data: any) {
+    this.bookingservice.statusRejected(data);
+    alert("Booking Rejected");
+    location.pathname = ('/admin-approval');
+  }
+
+
+    
+
+
+
 }

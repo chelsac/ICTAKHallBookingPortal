@@ -38,7 +38,7 @@ export class UserUpdateComponent implements OnInit {
     this.booking.date=this.bookdate.toLocaleDateString();
     this.bookingservice.updatebooking(this.booking);
     console.log(this.booking);
-    alert("Hall Updated");
+    alert("Booking Updated");
     location.pathname = ('/homeuser');
     
   }

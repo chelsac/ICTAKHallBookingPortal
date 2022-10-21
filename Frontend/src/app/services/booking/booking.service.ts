@@ -37,5 +37,17 @@ export class BookingService {
     .subscribe(data=> {console.log(data)})
   }
 
+  statusApproved(id:any){
+    console.log(id);
+    return this.http.put('http://localhost:4000/api/booking/statusApproved/'+id._id,{id})
+    .subscribe(data=> {console.log(data)})
+  }
+
+  statusRejected(id:any){
+    console.log(id);
+    return this.http.put('http://localhost:4000/api/booking/statusRejected/'+id._id,{id})
+    .subscribe(data=> {console.log(data)})
+  }
+
 
 }
