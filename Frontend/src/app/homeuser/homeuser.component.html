@@ -6,7 +6,7 @@
         <h1 class="text-center mytexth">Welcome to ICTAK Hall Booking Portal</h1>
         <p class="text-center mytextp">Plan your meetings effortlessly!</p>
         <div class="text-center">
-        <a routerLink="halllist-user" class="btn mybutton">Explore</a>
+        <a routerLink="/halllist-user" class="btn mybutton">Explore</a>
         </div>
     </div>
   </div>
@@ -16,7 +16,7 @@
         <h1 class="text-center mytexth">Welcome to ICTAK Hall Booking Portal</h1>
         <p class="text-center mytextp">Plan your meetings effortlessly!</p>
         <div class="text-center">
-        <a routerLink="halllist-user" class="btn mybutton">Explore</a>
+        <a routerLink="/halllist-user" class="btn mybutton">Explore</a>
         </div>
     </div>
   </div>
@@ -33,7 +33,7 @@
                 <p class="card-text"><b>Starting Time: </b> {{i.starttime}}</p>
                 <p class="card-text"><b>Ending Time: </b> {{i.endtime}}</p>
                 <p class="card-text"><b>Status: </b> {{i.status}}</p>
-                <button id="editbtn" class="btn btn-success m-2 editbtn"  type="submit">Update</button>
+                <button id="editbtn" (click)="editbooking(i)" class="btn btn-success m-2 editbtn"  type="submit">Update</button>
   
                 <!-- Cancel button --> 
                 <button id="cancelbtn" (click)="delete(i)" class="btn btn-secondary m-2 editbtn" > Cancel</button>

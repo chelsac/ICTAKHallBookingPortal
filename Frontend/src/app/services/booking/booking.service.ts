@@ -26,5 +26,16 @@ export class BookingService {
     return this.http.delete('http://localhost:4000/api/booking/deletebooking/'+id);
   }
 
+  geteditbooking(_id:any){
+
+    return this.http.get('http://localhost:4000/api/booking/'+_id);
+  }
+
+  updatebooking(booking:any){
+    console.log(booking);
+    return this.http.put('http://localhost:4000/api/booking/editBooking/'+booking._id, {booking})
+    .subscribe(data=> {console.log(data)})
+  }
+
 
 }

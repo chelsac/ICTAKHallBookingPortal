@@ -70,4 +70,10 @@ export class BookinglistingComponent implements OnInit {
     location.pathname = ('/bookinglist');
   }
 
+  editbooking(booking: any) {
+    localStorage.setItem("editBookingId", booking._id.toString());
+    console.log(booking._id.toString());
+    location.pathname = ('/user-update');
+  }
+
 }

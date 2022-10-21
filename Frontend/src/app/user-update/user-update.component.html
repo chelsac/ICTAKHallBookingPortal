@@ -2,7 +2,29 @@
 <app-user-header></app-user-header>
 
 <div>
+  <form #addbooking="ngForm" >
     <h2>Update Booking</h2>
+    <h4>Hall Name</h4>
+    <input type="text" id="hallname" name="hallname" required  [(ngModel)]="booking.hallname">
+    <h4>Date</h4>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label></mat-label>
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <input type="text" id="date" name="date" required matInput [matDatepicker]="picker" [(ngModel)]="bookdate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <h4>Time Duration</h4>
+    <p>Start Time</p>
+    <input type="time" id="starttime" name="starttime" required  [(ngModel)]="booking.starttime">
+    <p>End Time</p>
+    <input type="time" id="endtime" name="endtime" required  [(ngModel)]="booking.endtime">
+    <li>
+      <button id="editbtn" class="btn btn-success m-2 editbtn"  (click)="update()">Update</button>
+      <button id="cancelbtn" class="btn btn-secondary m-2 editbtn" (click)="cancel()" > Cancel</button>
+    </li>
+  </form>
+    <!-- 
     <h4>Hall Name</h4>
     <input type="text">
     <h4>Date</h4>
@@ -11,12 +33,9 @@
     <input type="text">
     <h4>Ending Time</h4>
     <input type="text">
-   
+    -->
 
-    <li>
-      <button id="editbtn" class="btn btn-success m-2 editbtn"  type="submit">Update</button>
-      <button id="cancelbtn" class="btn btn-secondary m-2 editbtn" > Cancel</button>
-    </li>
+
     
     
 </div>

@@ -97,4 +97,10 @@ export class HomeuserComponent implements OnInit {
     alert("Booking canceled");
     location.pathname = ('/homeuser');
   }
+
+  editbooking(booking: any) {
+    localStorage.setItem("editBookingId", booking._id.toString());
+    console.log(booking._id.toString());
+    location.pathname = ('/user-update');
+  }
 }

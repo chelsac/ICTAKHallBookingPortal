@@ -64,4 +64,45 @@ bookingRoute.route('/deletebooking/:id').delete(function (req, res) {
 
 })
 
+// find a booking
+bookingRoute.route('/:id').get(function (req, res) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
+    const id = req.params.id;
+    bookingdetails.findOne({ "_id": id }).then((_booking) => {
+        console.log("hi");
+        console.log(_booking);
+        res.send(_booking);
+
+    })
+
+})
+
+//booking update
+bookingRoute.route('/editbooking/:id').put(function (req, res) {
+    console.log("hello");
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
+    console.log("inside update");
+    console.log(req.body.booking.date);
+    console.log("well");
+    bookingdetails.findByIdAndUpdate({ "_id": req.body.booking._id },
+        {
+            $set: {
+                // "userid":req.body.userid,
+                // "name":req.body.name,
+                "hallname":req.body.booking.hallname,
+                "date":req.body.booking.date,
+                "starttime":req.body.booking.starttime,
+                "endtime":req.body.booking.endtime,
+                "status":"pending"
+
+            }
+        })
+        .then(function () {
+            res.send();
+        })
+
+});
+
 module.exports = bookingRoute;
