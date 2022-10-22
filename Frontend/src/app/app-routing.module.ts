@@ -25,11 +25,11 @@ import { UserUpdateComponent } from './user-update/user-update.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'homeuser', component: HomeuserComponent},
+  { path: 'homeuser', component: HomeuserComponent },
   { path: 'booking', component: BookinglistComponent }, 
-  { path: 'halllist-user', component:HalllistUserComponent},
-  { path: 'bookinglist', component:BookinglistingComponent}, 
-  {path:'user-update', component:UserUpdateComponent},
+  { path: 'halllist-user', component: HalllistUserComponent },
+  { path: 'bookinglist', component: BookinglistingComponent }, 
+  { path: 'user-update', component: UserUpdateComponent },
 
 
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard], data: { roles: [Role.Admin]} }, //only admin
