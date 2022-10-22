@@ -114,28 +114,30 @@
                             <table width="100%">
                                 <thead>
                                     <tr>
-                                        <td> User Name</td>
+                                        <td>Name</td>
+                                        <td>User Id</td>
                                         <td>Hall</td>
                                         <td>Date</td>
-                                        <td>Time</td>
-                                        <td>Email</td>
+                                        <td>Start Time</td>
+                                        <td>End Time</td>
                                         <td>Status</td>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody *ngFor="let i of booking">
                                     <tr>
-                                        <td>Mary John</td>
-                                        <td>ABC Hall</td>
-                                        <td>13/11/2022</td>
-                                        <td>11.00am:12.00pm</td>
-                                        <td>mary@mail.com</td>
+                                        <td>{{i.name}}</td>
+                                        <td>{{i.userid}}</td>
+                                        <td>{{i.hallname}}</td>
+                                        <td>{{i.date}}</td>
+                                        <td>{{i.starttime}}</td>
+                                        <td>{{i.endtime}}</td>
                                         <td>
                                             <span class="status purple"></span>
-                                            Review
+                                            Pending
                                         </td>
                                     </tr>
 
-                                    <tr>
+                                    <!-- <tr>
                                         <td>Mary John</td>
                                         <td>ABC Hall</td>
                                         <td>13/11/2022</td>
@@ -181,19 +183,9 @@
                                             <span class="status pink"></span>
                                             In progress
                                         </td>
-                                    </tr>
+                                    </tr> -->
 
-                                    <tr>
-                                        <td>Mary John</td>
-                                        <td>ABC Hall</td>
-                                        <td>13/11/2022</td>
-                                        <td>11.00am:12.00pm</td>
-                                        <td>mary@mail.com</td>
-                                        <td>
-                                            <span class="status orange"></span>
-                                            Pending
-                                        </td>
-                                    </tr>
+
                                 </tbody>
                             </table>
 
