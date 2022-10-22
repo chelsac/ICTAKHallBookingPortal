@@ -14,10 +14,6 @@ export class RegistrationComponent implements OnInit {
   registerForm: any;
   loading = false;
   submitted = false;
-
-  roleList = [ {id:1, name:"admin"},
-  {id:2,name:"user"}
-  ];
  
   constructor(
     private formBuilder: FormBuilder,
@@ -25,35 +21,41 @@ export class RegistrationComponent implements OnInit {
     private userService: UserService
   ) { }
 
-  ngOnInit() {
-    
+  ngOnInit() {   
     this.createForm();
-
   }
 
 
   createForm() {
-    this.registerForm = this.formBuilder.group({
-  
+    this.registerForm = this.formBuilder.group({ 
       name: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
+      mobile: ['',[Validators.required,Validators.minLength(10)]],
       role: ['', Validators.required],
       jobTitle: ['', Validators.required],
-      mobileno: ['',[Validators.required,Validators.minLength(10)]],
+      department:['',Validators.required],
       address: ['',Validators.required],
       district:['',Validators.required],
       state:['',Validators.required],
-      pincode:['',Validators.required],
-      ictakid:['',Validators.required],
-      department:['',Validators.required]
+      pinCode:['',Validators.required]
     });
   }
 
-  onSubmit() {
-    
-  }
+  register() {
 
+    if (this.registerForm.invalid) {
+      return;
+    }
+    
+    this.userService.addUser(this.registerForm.value).subscribe({
+      next: (result: any) => {
+        this.router.navigate(['/user-list']);
+      },
+      error: (err: any) => {
+        console.log(err);
+      }
+    });
+  }
 }
 
-//https://www.itsolutionstuff.com/post/angular-13-property-name-comes-from-an-index-signature-so-it-must-be-accessed-with-requiredexample.html

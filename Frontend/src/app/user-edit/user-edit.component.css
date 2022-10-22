@@ -1,12 +1,12 @@
 .edituser{
     margin-top: 50px;
-    width: 750px;
+    width: 900px;
     border: 1px solid #ced4da !important;
     background-color: white;
 }
 
 .card {
-    width: 700px;
+    width: 900px;
     height: 550px;
     margin-top: 100px;
     background: black;
@@ -18,4 +18,21 @@
     width: 80px;
     height: 35px;
     font-size: 14px !important;
+}
+
+label {
+    display: table-cell;
+    width: 100px;
+    white-space: nowrap
+    
+}
+  
+.cont {
+    display: table;
+    width: 100%
+  }
+
+  span {
+    display: table-cell;
+    padding: 0 0 0 5px
 }

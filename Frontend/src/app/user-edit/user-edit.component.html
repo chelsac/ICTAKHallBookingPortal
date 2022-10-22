@@ -7,22 +7,94 @@
 
     <br>
 
-    <!-- firstName -->
-    <input id="firstName" name="firstName" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.firstName" formControlName="firstName" placeholder="Firstname">
+    <div class="form-row">
+      <div class="col" style="padding: 15px">
 
-    <br>
-    <!-- lastName -->
-    <input id="lastName" name="lastName" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.lastName" formControlName="lastName" placeholder="Lastname">
+          <!-- name -->
+          <div class="cont">
+          <label for="name">Name</label>
+          <span><input id="name" name="name" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.name" formControlName="name" placeholder="Name"></span>
+        </div>
+          <br>
 
-    <br>
-    <!-- email -->
-    <input id="email" name="email" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.email" formControlName="email" placeholder="Email">
+          <!-- email -->
+          <div class="cont">
+          <label for="email">Email</label>
+          <span><input id="email" name="email" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.email" formControlName="email" placeholder="Email"></span>
+        </div>
+          <br>
 
-    <br>
-    <!-- jobTitle -->
-    <input id="jobTitle" name="jobTitle" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.jobTitle" formControlName="jobTitle" placeholder="Job Title">
+          <!-- district -->
+          <div class="cont">
+          <label for="district">District</label>
+          <span><input id="district" name="district" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.district" formControlName="district" placeholder="District"></span>
+        </div>
+          <br>
 
-    <br>
+          <!-- state -->
+          <div class="cont">
+          <label for="state">State</label>
+          <span><input id="state" name="state" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.state" formControlName="state" placeholder="State"></span>
+        </div>
+          <br>
+
+          <!-- pinCode -->
+          <div class="cont">
+          <label for="pinCode">Pin Code</label>
+          <span><input id="pinCode" name="pinCode" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.pinCode" formControlName="pinCode" placeholder="Pin Code"></span>
+        </div>
+          <br>
+
+          <!-- address -->
+          <div class="cont">
+          <label for="address">Address</label>
+          <span><textarea placeholder="Address" class="form-control form-control-lg mb-4" [(ngModel)]="user.address" formControlName="address"></textarea></span>
+        </div>
+          <br>
+
+      </div>
+
+      <div class="col" style="padding: 15px">
+
+          <!-- mobile -->
+          <div class="cont">
+          <label for="mobile">Mobile</label>
+          <span><input id="mobile" name="mobile" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.mobile" formControlName="mobile" placeholder="Mobile"></span>
+        </div>
+          <br>
+
+          <!-- role -->
+          <div class="cont">
+          <label for="role">Role</label>
+          <span><select id="role" class="form-select form-select-lg mb-4" [(ngModel)]="user.role" formControlName="role">
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+          </select></span>
+        </div>
+          <br>
+
+          <!-- jobTitle -->
+          <div class="cont">
+          <label for="role">Job Title</label>
+          <span><input id="jobTitle" name="jobTitle" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.jobTitle" formControlName="jobTitle" placeholder="Job Title"></span>
+        </div>
+          <br>
+
+          <!-- department -->
+          <div class="cont">
+          <label for="department">Department</label>
+          <span><input id="department" name="department" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.department" formControlName="department" placeholder="Department"></span>
+        </div>
+          <br>
+
+
+
+
+      </div>
+    </div>
+
+
+
 
 
     <!-- Send button -->

@@ -22,28 +22,34 @@ export class UserEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.createForm();
-   // this.getUserDetails();
+    this.getUserDetails();
   }
 
   createForm() {
     this.updateForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
+      name: ['', Validators.required],
       email: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      jobTitle: ['', Validators.required]
+      mobile: ['',[Validators.required,Validators.minLength(10)]],
+      role: ['', Validators.required],
+      jobTitle: ['', Validators.required],
+      department:['',Validators.required],
+      address: ['',Validators.required],
+      district:['',Validators.required],
+      state:['',Validators.required],
+      pinCode:['',Validators.required]
     });
   }
 
   getUserDetails(){
-    // this.userService.getUser(this.user._id).subscribe({
-    //   next: (result: any) => {
-    //     this.user= result.body;
-    //   },
-    //   error: (err: any) => {
-    //     console.log(err);
-    //   }
-    // });
+    let usrId = this.user?._id? this.user._id:localStorage.getItem('usrid')
+    this.userService.getUser(usrId).subscribe({
+      next: (result: any) => {
+        this.user= result.body;
+      },
+      error: (err: any) => {
+        console.log(err);
+      }
+    });
   }
 
 

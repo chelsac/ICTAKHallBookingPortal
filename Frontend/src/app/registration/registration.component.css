@@ -21,6 +21,9 @@ form {
 
 .btn{
   background-color: #004d40 !important;
+  width: 70px;
+  height: 32px;
+  font-size: 12px;
 }
 
 .login_link{
@@ -36,4 +39,8 @@ form {
   font-size: x-large;
   font-family: fantasy;
   color: #004d40;
+}
+
+.form-control{
+  font-size: 14px;
 }

@@ -3,7 +3,7 @@
 <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
         <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">John Will</span><span class="text-black-50">johnWill@gmail.com</span><span> </span></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">{{user.name}}</span><span class="text-black-50">{{user.email}}</span><span> </span></div>
         </div>
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
@@ -12,26 +12,26 @@
                 </div>
                 <div class="row mt-2">
                     <div class="col-md-12"><label class="labels"> Name</label>
-                    <p class="user-field">John Will</p>
+                    <p class="user-field">{{user.name}}</p>
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-12"><label class="labels">Mobile Number</label>
-                        <p class="user-field">+91 9844112233</p>
+                        <p class="user-field">{{user.mobile}}</p>
                     </div>
                     <div class="col-md-12"><label class="labels">Email ID</label></div>
-                    <p class="user-field">johnWill@gmail.com</p>
+                    <p class="user-field">{{user.email}}</p>
                     <div class="col-md-12"><label class="labels">Address</label>
-                        <p class="user-field">Evergreen House</p>
+                        <p class="user-field">{{user.address}}</p>
                     </div>
                     <div class="row mt-3"></div>
                     <div class="col-md-6"><label class="labels">State</label>
-                    <p class="user-field">Kerala</p></div>
+                    <p class="user-field">{{user.state}}</p></div>
                     <div class="col-md-6"><label class="labels">District</label>
-                    <p class="user-field">Pathanamthitta</p></div>
+                    <p class="user-field">{{user.district}}</p></div>
                     <div class="row mt-3"></div>
                     <div class="col-md-12"><label class="labels">Postcode</label>
-                    <p class="user-field">689649</p></div>
+                    <p class="user-field">{{user.pinCode}}</p></div>
                 </div>
                
             </div>
@@ -42,27 +42,20 @@
                 <h4 class="text-left">Work Details</h4>
             </div>
                 <div class="col-md-12"><label class="labels">Job Title</label>
-                    <p class="user-field">Assistant Professor</p>
+                    <p class="user-field">{{user.jobTitle}}</p>
                 </div> <br>
-               <!-- <div class="col-md-12"><label class="labels">Subject</label>
-                    <p class="user-field">MEAN stack</p>
-                </div>
-                <div class="col-md-12"><label class="labels">Experience</label>
-                    <p class="user-field">3 years</p>
-                </div>
-                <div class="col-md-12"><label class="labels">Joining Date</label>
-                    <p class="user-field">11-12-2021</p>
-                </div> -->
                 <div class="col-md-12"><label class="labels">ICTAKID Id</label>
-                    <p class="user-field">ICTMEAN102</p>
+                    <p class="user-field">{{user.userid}}</p>
                 </div>
                 <div class="col-md-12"><label class="labels">Department</label>
-                    <p class="user-field">Computer Science</p>
+                    <p class="user-field">{{user.department}}</p>
                 </div>
             </div>
             <div class="mt-5 text-right">
-                <button class="btn btn-primary profile-button" type="button">Delete</button>
-                <button class="btn btn-primary profile-button" type="button">Edit</button></div>
+                <button class="btn btn-primary profile-button" type="button" (click)="back()">Back</button>
+                <button class="btn btn-primary profile-button" type="button" (click)="goToEditUser(user)">Edit</button>
+                <button class="btn btn-primary profile-button" type="button" (click)="goToDeleteUser(user)">Delete</button>
+            </div>
         </div>
     </div>
 </div>
