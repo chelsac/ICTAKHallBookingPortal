@@ -29,7 +29,7 @@ export class BookinglistComponent implements OnInit {
   };
 
    minDate = new Date();
-   
+   //maxdate = new Date();
 
 
   addbookingfn(){
