@@ -12,4 +12,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  more(){
+    location.pathname = ('/admin-approval');
+  }
+
 }
