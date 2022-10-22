@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookingService } from '../services/booking/booking.service';
 import { Router } from '@angular/router';
 import { UserService } from '../services/users/user.service';
-
+import { HallsService } from '../services/halls/halls.service';
 @Component({
   selector: 'app-user-update',
   templateUrl: './user-update.component.html',
@@ -20,10 +20,17 @@ export class UserUpdateComponent implements OnInit {
     endtime:"",
     status:""
   };
+  halls = [{
+    name: '',
+    capacity: '',
+    location: '',
+    image: '',
+    description: ''
+  }];
   bookingId="id"
   bookdate=new Date();
 
-  constructor(private bookingservice:BookingService,private userservice:UserService,private router: Router) { }
+  constructor(private hallsservice: HallsService,private bookingservice:BookingService,private userservice:UserService,private router: Router) { }
 
   ngOnInit(): void {
     var bookingId= localStorage.getItem("editBookingId");
@@ -32,6 +39,12 @@ export class UserUpdateComponent implements OnInit {
       console.log( this.booking);
       this.bookdate=new Date(this.booking.date);
   })
+
+  this.hallsservice.gethalls().subscribe((data) => {
+    this.halls = JSON.parse(JSON.stringify(data));
+    console.log(this.halls);
+  })
+
   }
 
   update(){

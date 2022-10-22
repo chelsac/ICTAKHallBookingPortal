@@ -34,7 +34,7 @@ button{
   color: white;
   border: #8ad4c8;
 }
-input[type=text],input[type=time]{
+input[type=text],input[type=time],select{
     width: 100%;
     margin: 2px;
     padding: 5px;

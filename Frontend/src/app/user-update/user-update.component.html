@@ -5,7 +5,10 @@
   <form #addbooking="ngForm" >
     <h2>Update Booking</h2>
     <h4>Hall Name</h4>
-    <input type="text" id="hallname" name="hallname" required  [(ngModel)]="booking.hallname">
+    <select id="hallname" name="hallname" [(ngModel)]="booking.hallname">
+      
+      <option *ngFor="let i of halls" [value]="i.name">{{i.name}}</option>
+    </select>
     <h4>Date</h4>
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label></mat-label>
