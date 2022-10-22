@@ -36,3 +36,8 @@ label {
     display: table-cell;
     padding: 0 0 0 5px
 }
+
+.alert{
+    margin-left: 105px;
+}
+
