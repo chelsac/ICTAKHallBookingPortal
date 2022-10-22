@@ -58,46 +58,46 @@
         </header>
         <main>
             <div class="cards">
-                <div class="card-single">
+                <a routerLink="/conferenceRooms" class="card-single">
                     <div>
-                        <h1>5</h1>
+                        <h1>{{hallcount}}</h1>
                         <span>Hall Types</span>
                     </div>
                     <div>
                         <span class="las la-receipt"></span>
                     </div>
-                </div>
+                </a>
 
 
-                <div class="card-single">
+                <a routerLink="/admin-approval" class="card-single">
                     <div>
-                        <h1>12</h1>
+                        <h1>{{newbookingcount}}</h1>
                         <span>New Bookings</span>
                     </div>
                     <div>
                         <span class="las la-bookmark"></span>
                     </div>
-                </div>
+                </a>
 
-                <div class="card-single">
+                <a routerLink="/user-list" class="card-single">
                     <div>
-                        <h1>7</h1>
-                        <span>Assigned Bookings</span>
+                        <h1>{{usercount}}</h1>
+                        <span>Users</span>
                     </div>
                     <div>
                         <span class="las la-book-reader"></span>
                     </div>
-                </div>
+                </a>
 
-                <div class="card-single" style="background: #fff !important;">
+                <a routerLink="/history" class="card-single" style="background: #fff !important;">
                     <div>
-                        <h1>15</h1>
+                        <h1>{{allbookingcount}}</h1>
                         <span>Booking List</span>
                     </div>
                     <div>
                         <span class="las la-list"></span>
                     </div>
-                </div>
+                </a>
 
             </div>
 
