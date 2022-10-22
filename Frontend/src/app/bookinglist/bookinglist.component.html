@@ -17,7 +17,7 @@
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label></mat-label>
       <mat-hint>MM/DD/YYYY</mat-hint>
-      <input type="text" id="date" name="date" required matInput [matDatepicker]="picker" [(ngModel)]="booking.date">
+      <input type="text" id="date" name="date" required matInput [matDatepicker]="picker" [min]="minDate"  [(ngModel)]="booking.date">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>

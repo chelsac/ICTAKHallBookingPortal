@@ -28,6 +28,10 @@ export class BookinglistComponent implements OnInit {
     status:"pending"
   };
 
+   minDate = new Date();
+   
+
+
   addbookingfn(){
     var date=new  Date(this.booking.date);
     this.booking.date=date.toLocaleDateString();
@@ -42,6 +46,8 @@ export class BookinglistComponent implements OnInit {
   constructor(private hallsservice: HallsService,private userservice:UserService,private bookingservice:BookingService,private router: Router ) {}
 
   ngOnInit(): void {
+    
+  
     var emailid= localStorage.getItem("emailid");
     console.log(emailid);
     this.userservice.getbooking(emailid).subscribe((data:any)=>{
