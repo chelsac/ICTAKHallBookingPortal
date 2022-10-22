@@ -20,6 +20,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { Role } from './models/role';
 import { UserUpdateComponent } from './user-update/user-update.component';
 import { HistoryComponent } from './history/history.component';
+import { BookingCalendarComponent } from './booking-calendar/booking-calendar.component';
+
 
 
 
@@ -31,8 +33,9 @@ const routes: Routes = [
   { path: 'halllist-user', component: HalllistUserComponent },
   { path: 'bookinglist', component: BookinglistingComponent }, 
   { path: 'user-update', component: UserUpdateComponent },
-
-
+  
+  { path: 'bookingcalendar', component:BookingCalendarComponent},
+  //{ path: 'bookingcalendar', component:BookingCalendarComponent, canActivate: [AuthGuard], data: { roles:[Role.Admin]} },//only admin
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard], data: { roles: [Role.Admin]} }, //only admin
   { path: 'registration', component: RegistrationComponent, canActivate: [AuthGuard], data: { roles: [Role.Admin]} }, //only admin
   { path: 'user-list', component: UserListComponent, canActivate: [AuthGuard], data: { roles: [Role.Admin]} }, //only admin

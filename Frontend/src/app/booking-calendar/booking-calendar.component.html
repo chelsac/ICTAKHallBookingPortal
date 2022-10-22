@@ -1,0 +1,7 @@
+<app-admin-header></app-admin-header>
+<ejs-schedule [eventSettings]="eventObject" [selectedDate]="setDate" [currentView]="setView" [views]="setViews">
+    <e-resources>
+        <e-resource field="ResourceID"  title="Resource Name" name="Resources" textField="Name" idField="Id" colorField="Color" [dataSource]="resourceDataSource" >
+        </e-resource>
+    </e-resources>
+</ejs-schedule>
