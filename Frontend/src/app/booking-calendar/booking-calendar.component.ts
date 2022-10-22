@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatRecycleRows } from '@angular/material/table';
 import { View, EventSettingsModel } from '@syncfusion/ej2-angular-schedule';
+import { BookingService } from '../services/booking/booking.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-booking-calendar',
@@ -8,6 +10,28 @@ import { View, EventSettingsModel } from '@syncfusion/ej2-angular-schedule';
   styleUrls: ['./booking-calendar.component.css']
 })
 export class BookingCalendarComponent implements OnInit {
+
+  allbooking=[{
+    userid:"",
+    name:"",
+    hallname:"",
+    date:"",
+    starttime:"",
+    endtime:"",
+    status:""
+  }];
+  booking
+  =[{
+    userid:"",
+    name:"",
+    hallname:"",
+    date:"",
+    starttime:"",
+    endtime:"",
+    status:""
+  }];
+
+
   
   public setView: View = 'Month';
   public  setDate: Date = new Date(2022, 9, 21);
@@ -37,9 +61,22 @@ export class BookingCalendarComponent implements OnInit {
   }
 
   public setViews: View[] = ["Day", "Week", "Month","Agenda"];
-  constructor() { }
+  constructor(private bookingservice:BookingService,private router: Router) { }
 
   ngOnInit(): void {
+    this.bookingservice.getallbooking().subscribe((data) => {
+      this.allbooking = JSON.parse(JSON.stringify(data));
+      console.log(this.allbooking);
+
+      this.booking.pop();
+      for(var i in this.allbooking){
+        if(this.allbooking[i].status=="approved"){
+          this.booking.push(this.allbooking[i]);
+        }
+      }
+      console.log(this.booking);
+      
+    })
   }
 
 }
