@@ -29,8 +29,8 @@ export class BookinglistComponent implements OnInit {
   };
 
    minDate = new Date();
-   //maxdate = new Date();
-
+   maxdate = new Date();
+  //  maxdate.setDate(maxdate.getDate() + 1);
 
   addbookingfn(){
     var date=new  Date(this.booking.date);
@@ -47,7 +47,8 @@ export class BookinglistComponent implements OnInit {
 
   ngOnInit(): void {
     
-  
+    this.maxdate.setDate(this.maxdate.getDate() + 15);
+
     var emailid= localStorage.getItem("emailid");
     console.log(emailid);
     this.userservice.getbooking(emailid).subscribe((data:any)=>{
