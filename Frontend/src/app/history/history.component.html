@@ -1,0 +1,29 @@
+<app-admin-header></app-admin-header>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<div class="container">
+<ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-1">Name</div>
+      <div class="col col-2">ICTAK Id</div>
+      <div class="col col-3">Hall Name</div>
+      <div class="col col-4">Date</div>
+      <div class="col col-5">Start Time</div>
+      <div class="col col-6">End Time</div>
+      <div class="col col-7">Status</div>
+      <!-- <div class="col col-8"></div> -->
+    </li>
+    <li class="table-row"  *ngIf="booking.length==0" >No pending approvals</li>
+    <li class="table-row" *ngFor="let i of booking">
+      <div class="col col-1" data-label="Id">{{i.name}}</div>
+      <div class="col col-2" data-label="Name">{{i.userid}}</div>
+      <div class="col col-3" data-label="HallName">{{i.hallname}}</div>
+      <div class="col col-4" data-label="Date">{{i.date}}</div>
+      <div class="col col-5" data-label="StartTme">{{i.starttime}}</div>
+      <div class="col col-6" data-label="EndTime">{{i.endtime}}</div>
+      <div class="col col-7" data-label="status"  >{{i.status}}</div>
+    </li>
+ 
+    
+  </ul>
+</div>

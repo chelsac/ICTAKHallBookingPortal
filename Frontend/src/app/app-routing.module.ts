@@ -19,6 +19,7 @@ import { HomeuserComponent } from './homeuser/homeuser.component';
 import { AuthGuard } from './guards/auth.guard';
 import { Role } from './models/role';
 import { UserUpdateComponent } from './user-update/user-update.component';
+import { HistoryComponent } from './history/history.component';
 
 
 
@@ -42,8 +43,8 @@ const routes: Routes = [
   { path: 'conferenceRooms', component:ConferenceRoomListComponent, canActivate: [AuthGuard], data: { roles: [Role.Admin]} }, //only admin
   { path: 'add-hall', component:AddHallComponent, canActivate: [AuthGuard], data: { roles: [Role.Admin]}}, //only admin
   { path: 'hallupdate' ,component:HallUpdateComponent, canActivate: [AuthGuard], data: { roles: [Role.Admin]}}, //only admin
-  { path: 'admin-approval', component: AdminApprovalComponent, canActivate: [AuthGuard], data: { roles: [Role.Admin]}} //only admin
-  
+  { path: 'admin-approval', component: AdminApprovalComponent, canActivate: [AuthGuard], data: { roles: [Role.Admin]}}, //only admin
+  {path:'history',component:HistoryComponent, canActivate: [AuthGuard], data: { roles: [Role.Admin]}}
   
   // { path: 'users',component:UsersComponent, //only admin
   //   children:[
