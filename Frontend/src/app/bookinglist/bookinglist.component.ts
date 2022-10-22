@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BookingService } from '../services/booking/booking.service';
 import { HallsService } from '../services/halls/halls.service';
+import { UserService } from '../services/users/user.service';
 @Component({
 
   selector: 'app-bookinglist',
@@ -38,9 +39,18 @@ export class BookinglistComponent implements OnInit {
     })
   }
 
-  constructor(private hallsservice: HallsService,private bookingservice:BookingService,private router: Router ) {}
+  constructor(private hallsservice: HallsService,private userservice:UserService,private bookingservice:BookingService,private router: Router ) {}
 
   ngOnInit(): void {
+    var emailid= localStorage.getItem("emailid");
+    console.log(emailid);
+    this.userservice.getbooking(emailid).subscribe((data:any)=>{
+      console.log(data.body.userid);
+      this.booking.userid=data.body.userid;
+      console.log(data.body.name);
+      this.booking.name=data.body.name;
+  })
+
     this.hallsservice.gethalls().subscribe((data) => {
       this.halls = JSON.parse(JSON.stringify(data));
       console.log(this.halls);
