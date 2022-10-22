@@ -9,6 +9,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })
+
 export class UserListComponent implements OnInit {
   users: any;
 
@@ -34,7 +35,13 @@ export class UserListComponent implements OnInit {
     });
   }
 
+  goToViewUser(user: any){
+    localStorage.setItem('usrid',user._id);
+    this.router.navigate(['user-view'], { state: user }); 
+  }
+
   goToEditUser(user: any){
+    localStorage.setItem('usrid',user._id);
     this.router.navigate(['user-edit'], { state: user });
   }
 

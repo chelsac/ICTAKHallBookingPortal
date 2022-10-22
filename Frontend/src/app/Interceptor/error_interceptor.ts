@@ -1,4 +1,4 @@
-import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { catchError, Observable, of } from "rxjs";
 import { AuthService } from "../services/auth/auth.service";
@@ -12,9 +12,8 @@ intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<an
       catchError((error: any) => {
         if (error.status == 401 && error.error.message == "Authentication Failed") {
             this.authService.logout();
-        } else {
-        }
-        return of(error)
+        } 
+        throw error;
       }),
     )
   }

@@ -12,12 +12,12 @@
     </li>
 
     <li class="table-row" *ngFor = "let user of users">
-      <!-- <div class="col col-1" data-label="Id">1.</div> -->
-      <div class="col col-2" data-label="Name">{{user.firstName}} {{user.lastName}}</div>
+      <!-- <div class="col col-1" data-label="Id">{{user.userid}}</div> -->
+      <div class="col col-2" data-label="Name">{{user.name}}</div>
       <div class="col col-3" data-label="JobTitle">{{user.jobTitle}}</div>
       <div class="col col-4" data-label="Email">{{user.email}}</div>
       <div class="col col-5">
-        <button type="button" class="faviconimg"><i class="fa fa-eye"></i> </button>
+        <button type="button" class="faviconimg"><i class="fa fa-eye" (click)="goToViewUser(user)"></i> </button>
         <button type="button" class="faviconimg"><i class="fa fa-trash" (click)="goToDeleteUser(user)"></i> </button>
         <button type="button" class="faviconimg"><i class="fa fa-edit" (click)="goToEditUser(user)"></i> </button>
       </div>
