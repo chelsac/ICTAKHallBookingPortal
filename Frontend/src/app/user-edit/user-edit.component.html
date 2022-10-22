@@ -2,108 +2,189 @@
 
 
 
-   <form class="container edituser border-primary  border border-light p-5 justify-content-center"  [formGroup]="updateForm" (ngSubmit)="editUser()">
-    <p class="h2 mb-4">Edit User</p>
+<form class="container edituser border-primary  border border-light p-5 justify-content-center" [formGroup]="updateForm"
+  (ngSubmit)="editUser()">
+  <p class="h2 mb-4">Edit User</p>
 
+  <br>
+
+  <div class="form-row">
+    <div class="col" style="padding: 15px">
+
+      <!-- name -->
+      <div class="cont">
+        <label for="name">Name</label>
+        <span><input id="name" name="name" type="text" class="form-control form-control-lg mb-4" [(ngModel)]="user.name"
+            formControlName="name" placeholder="Name"></span>
+      </div>
+      <div
+        *ngIf="updateForm.controls['name'].invalid && (updateForm.controls['name'].dirty || updateForm.controls['name'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="updateForm.controls['name'].errors.required">
+          Name is required.
+        </div>
+      </div>
+      <br>
+
+      <!-- email -->
+      <div class="cont">
+        <label for="email">Email</label>
+        <span><input id="email" name="email" type="text" class="form-control form-control-lg mb-4"
+            [(ngModel)]="user.email" formControlName="email" placeholder="Email"></span>
+      </div>
+      <div
+        *ngIf="updateForm.controls['email'].invalid && (updateForm.controls['email'].dirty || updateForm.controls['email'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="updateForm.controls['email'].errors.required">
+          Email is required.
+        </div>
+      </div>
+      <br>
+
+      <!-- district -->
+      <div class="cont">
+        <label for="district">District</label>
+        <span><input id="district" name="district" type="text" class="form-control form-control-lg mb-4"
+            [(ngModel)]="user.district" formControlName="district" placeholder="District"></span>
+      </div>
+      <div
+        *ngIf="updateForm.controls['district'].invalid && (updateForm.controls['district'].dirty || updateForm.controls['district'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="updateForm.controls['district'].errors.required">
+          District is required.
+        </div>
+      </div>
+    
     <br>
 
-    <div class="form-row">
-      <div class="col" style="padding: 15px">
-
-          <!-- name -->
-          <div class="cont">
-          <label for="name">Name</label>
-          <span><input id="name" name="name" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.name" formControlName="name" placeholder="Name"></span>
-        </div>
-          <br>
-
-          <!-- email -->
-          <div class="cont">
-          <label for="email">Email</label>
-          <span><input id="email" name="email" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.email" formControlName="email" placeholder="Email"></span>
-        </div>
-          <br>
-
-          <!-- district -->
-          <div class="cont">
-          <label for="district">District</label>
-          <span><input id="district" name="district" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.district" formControlName="district" placeholder="District"></span>
-        </div>
-          <br>
-
-          <!-- state -->
-          <div class="cont">
-          <label for="state">State</label>
-          <span><input id="state" name="state" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.state" formControlName="state" placeholder="State"></span>
-        </div>
-          <br>
-
-          <!-- pinCode -->
-          <div class="cont">
-          <label for="pinCode">Pin Code</label>
-          <span><input id="pinCode" name="pinCode" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.pinCode" formControlName="pinCode" placeholder="Pin Code"></span>
-        </div>
-          <br>
-
-          <!-- address -->
-          <div class="cont">
-          <label for="address">Address</label>
-          <span><textarea placeholder="Address" class="form-control form-control-lg mb-4" [(ngModel)]="user.address" formControlName="address"></textarea></span>
-        </div>
-          <br>
-
+    <!-- state -->
+    <div class="cont">
+      <label for="state">State</label>
+      <span><input id="state" name="state" type="text" class="form-control form-control-lg mb-4"
+          [(ngModel)]="user.state" formControlName="state" placeholder="State"></span>
+    </div>
+    <div
+      *ngIf="updateForm.controls['state'].invalid && (updateForm.controls['state'].dirty || updateForm.controls['state'].touched)"
+      class="alert alert-danger">
+      <div *ngIf="updateForm.controls['state'].errors.required">
+        State is required.
       </div>
+    </div>
+    <br>
 
-      <div class="col" style="padding: 15px">
-
-          <!-- mobile -->
-          <div class="cont">
-          <label for="mobile">Mobile</label>
-          <span><input id="mobile" name="mobile" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.mobile" formControlName="mobile" placeholder="Mobile"></span>
-        </div>
-          <br>
-
-          <!-- role -->
-          <div class="cont">
-          <label for="role">Role</label>
-          <span><select id="role" class="form-select form-select-lg mb-4" [(ngModel)]="user.role" formControlName="role">
-            <option value="admin">Admin</option>
-            <option value="user">User</option>
-          </select></span>
-        </div>
-          <br>
-
-          <!-- jobTitle -->
-          <div class="cont">
-          <label for="role">Job Title</label>
-          <span><input id="jobTitle" name="jobTitle" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.jobTitle" formControlName="jobTitle" placeholder="Job Title"></span>
-        </div>
-          <br>
-
-          <!-- department -->
-          <div class="cont">
-          <label for="department">Department</label>
-          <span><input id="department" name="department" type="text"  class="form-control form-control-lg mb-4" [(ngModel)]="user.department" formControlName="department" placeholder="Department"></span>
-        </div>
-          <br>
-
-
-
-
+    <!-- pinCode -->
+    <div class="cont">
+      <label for="pinCode">Pin Code</label>
+      <span><input id="pinCode" name="pinCode" type="text" class="form-control form-control-lg mb-4"
+          [(ngModel)]="user.pinCode" formControlName="pinCode" placeholder="Pin Code"></span>
+    </div>
+    <div
+      *ngIf="updateForm.controls['pinCode'].invalid && (updateForm.controls['pinCode'].dirty || updateForm.controls['pinCode'].touched)"
+      class="alert alert-danger">
+      <div *ngIf="updateForm.controls['pinCode'].errors.required">
+        PinCode is required.
       </div>
     </div>
 
+  <br>
+
+  <!-- address -->
+  <div class="cont">
+    <label for="address">Address</label>
+    <span><textarea placeholder="Address" class="form-control form-control-lg mb-4" [(ngModel)]="user.address"
+        formControlName="address"></textarea></span>
+  </div>
+  <div
+    *ngIf="updateForm.controls['address'].invalid && (updateForm.controls['address'].dirty || updateForm.controls['address'].touched)"
+    class="alert alert-danger">
+    <div *ngIf="updateForm.controls['address'].errors.required">
+      Address is required.
+    </div>
+  </div>
+  <br>
+
+  </div>
+
+  <div class="col" style="padding: 15px">
+
+    <!-- mobile -->
+    <div class="cont">
+      <label for="mobile">Mobile</label>
+      <span><input id="mobile" name="mobile" type="text" class="form-control form-control-lg mb-4"
+          [(ngModel)]="user.mobile" formControlName="mobile" placeholder="Mobile"></span>
+    </div>
+    <div
+      *ngIf="updateForm.controls['mobile'].invalid && (updateForm.controls['mobile'].dirty || updateForm.controls['mobile'].touched)"
+      class="alert alert-danger">
+      <div *ngIf="updateForm.controls['mobile'].errors.required">Mobile is required.</div>
+      <div *ngIf="updateForm.controls['mobile'].errors.minlength">Mobile No: must be at least 10 numbers</div>
+    </div>
+    <br>
+
+    <!-- role -->
+    <div class="cont">
+      <label for="role">Role</label>
+      <span><select id="role" class="form-select form-select-lg mb-4" [(ngModel)]="user.role" formControlName="role">
+          <option value="admin">Admin</option>
+          <option value="user">User</option>
+        </select></span>
+    </div>
+    <div
+      *ngIf="updateForm.controls['role'].invalid && (updateForm.controls['role'].dirty || updateForm.controls['role'].touched)"
+      class="alert alert-danger">
+      <div *ngIf="updateForm.controls['role'].errors.required">
+        Role is required.
+      </div>
+    </div>
+    <br>
+
+    <!-- jobTitle -->
+    <div class="cont">
+      <label for="role">Job Title</label>
+      <span><input id="jobTitle" name="jobTitle" type="text" class="form-control form-control-lg mb-4"
+          [(ngModel)]="user.jobTitle" formControlName="jobTitle" placeholder="Job Title"></span>
+    </div>
+    <div
+      *ngIf="updateForm.controls['jobTitle'].invalid && (updateForm.controls['jobTitle'].dirty || updateForm.controls['jobTitle'].touched)"
+      class="alert alert-danger">
+      <div *ngIf="updateForm.controls['jobTitle'].errors.required">
+        Job Title is required.
+      </div>
+    </div>
+    <br>
+
+    <!-- department -->
+    <div class="cont">
+      <label for="department">Department</label>
+      <span><input id="department" name="department" type="text" class="form-control form-control-lg mb-4"
+          [(ngModel)]="user.department" formControlName="department" placeholder="Department"></span>
+    </div>
+    <div
+      *ngIf="updateForm.controls['department'].invalid && (updateForm.controls['department'].dirty || updateForm.controls['department'].touched)"
+      class="alert alert-danger">
+      <div *ngIf="updateForm.controls['department'].errors.required">
+        Department is required.
+      </div>
+    </div>
+    <br>
 
 
 
 
-    <!-- Send button -->
-    <div class="text-center">
-      <button id="editbtn" class="btn btn-success m-2 editbtn" type="submit">Edit User</button>
+  </div>
+  </div>
 
-    <!-- Cancel button --> 
+
+
+
+
+  <!-- Send button -->
+  <div class="text-center">
+    <button id="editbtn" class="btn btn-success m-2 editbtn" type="submit">Edit User</button>
+
+    <!-- Cancel button -->
     <button id="cancelbtn" class="btn btn-secondary m-2 editbtn" (click)="cancel()"> Cancel</button>
-    </div>
+  </div>
 
 
 </form>
