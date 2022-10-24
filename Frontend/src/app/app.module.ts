@@ -44,7 +44,7 @@ import { UserHeaderComponent } from './user-header/user-header.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { UserViewComponent } from './user-view/user-view.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ScheduleModule, RecurrenceEditorModule, DayService, WeekService, MonthService, AgendaService } from '@syncfusion/ej2-angular-schedule';
+import { ScheduleModule, RecurrenceEditorModule, DayService, WeekService, MonthService, AgendaService, ScheduleComponent} from '@syncfusion/ej2-angular-schedule';
 
 import { UserUpdateComponent } from './user-update/user-update.component';
 import { BookingCalendarComponent } from './booking-calendar/booking-calendar.component';
@@ -108,7 +108,7 @@ imports: [
   ],
 
   providers: [
-    DayService, WeekService, MonthService, AgendaService,
+    DayService, WeekService, MonthService, AgendaService,  ScheduleComponent,  
     { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
    
